@@ -4,13 +4,27 @@
   
     
     <entry>
-      <title>Github-hexo博客搭建</title>
+      <title>Github+hexo博客搭建</title>
       <link href="/2020/05/31/Github-hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
       <url>/2020/05/31/Github-hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</url>
       
-        <content type="html"><![CDATA[<hr><p>title: Github+hexo博客搭建<br>date: 2020-05-31 15:23:54<br>tags: </p><ul><li>博客搭建</li><li>github<br>categories: hexo博客<br>​—</li></ul><p>耗费一晚上加一个上午时间算是搭建好了hexo博客，过程中也遇到很多问题。<br>好在有CSDN的大佬们的文章帮忙。希望能够持续更新博客哦！</p><a id="more"></a>]]></content>
+        <content type="html"><![CDATA[<p>hexo静态博客搭建</p><a id="more"></a><p>耗费一晚上加一天时间算是搭建好了hexo博客，过程中也遇到很多问题。<br>好在有CSDN的大佬们的文章帮忙。希望能够持续更新博客哦！</p><p><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1590925784787&di=98a3f4f5db31305086a77e55a80583f2&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fq_70%2Cc_zoom%2Cw_640%2Fimages%2F20190208%2Fca63616f00fa419bbd79ef032cd07dfe.jpeg" alt=""></p>]]></content>
       
       
+      <categories>
+          
+          <category> hexo博客 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 博客搭建 </tag>
+            
+            <tag> github </tag>
+            
+        </tags>
       
     </entry>
     
