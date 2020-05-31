@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta name="renderer" content="webkit">
@@ -18,8 +16,16 @@
 
   <!-- 页面元数据 -->
   
-    <title>Archive: 2020/5 - Zhenyu&#39;s Blog | Choose distance.</title>
+    <title>Github-hexo博客搭建 - Zhenyu&#39;s Blog | Choose distance.</title>
   
+  
+    <meta name="description" content="
+title: Github+hexo博客搭建date: 2020-05-31 15:23:54tags: 
+
+博客搭建
+githubcategories: hexo博客​—
+
+耗费一晚上加一个上午时间算是搭建好了hexo博客，过程中也遇到很多问题。好在有CSDN的大佬们的文章帮忙。希望能够持续更新博客哦！">
   
 
   <!-- feed -->
@@ -70,114 +76,7 @@
 
 <body>
   
-  <div class="cover-wrapper">
-    
-      <cover class='cover  half'>
-        <div class='cover-body'>
-    <div class='a'>
-        
-            <img class='logo' src='https://cdn.jsdelivr.net/gh/Codezhenyu/CDN/img/logo.png' />
-            
-                
-                        
-    </div>
-    <!-- 封面滚动字体 -->
-    <div id="binft"></div>
-    <script>
-        var binft = function(r) {
-            function t() {
-                return b[Math.floor(Math.random() * b.length)]
-            }
-
-            function e() {
-                return String.fromCharCode(94 * Math.random() + 33)
-            }
-
-            function n(r) {
-                for (var n = document.createDocumentFragment(), i = 0; r > i; i++) {
-                    var l = document.createElement("span");
-                    l.textContent = e(), l.style.color = t(), n.appendChild(l)
-                }
-                return n
-            }
-
-            function i() {
-                var t = o[c.skillI];
-                c.step ? c.step-- : (c.step = g, c.prefixP < l.length ? (c.prefixP >= 0 && (c.text += l[c.prefixP]), c.prefixP++) : "forward" === c.direction ? c.skillP < t.length ? (c.text += t[c.skillP], c.skillP++) : c.delay ? c.delay-- : (c.direction = "backward", c.delay = a) : c.skillP > 0 ? (c.text = c.text.slice(0, -1), c.skillP--) : (c.skillI = (c.skillI + 1) % o.length, c.direction = "forward")), r.textContent = c.text, r.appendChild(n(c.prefixP < l.length ? Math.min(s, s + c.prefixP) : Math.min(s, t.length - c.skillP))), setTimeout(i, d)
-            }
-            var l = "",
-                o = ["我始终相信 ，走过平湖烟雨岁月山河", "那些历尽劫数尝遍人间百味的人 ，会更加生动而干净", "跨过星河迈过月亮去迎接更好的自己", "若你现在肯努力，最坏的结果也是大器晚成", "希望你所拼命争取的，最后都能如你所愿", "愿山野浓雾都有路灯 ，风雨漂泊都能归舟"].map(function(r) {
-                    return r + ""
-                }),
-                a = 2,
-                g = 1,
-                s = 5,
-                d = 75,
-                b = ["rgb(16,119,241)", "rgb(150,61,179)", "rgb(191,60,175)", "rgb(228,65,157)", "rgb(254,75,131)", "rgb(255,94,99)", "rgb(255,120,71)", "rgb(251,150,51)", "rgb(226,183,47)", "rgb(198,214,60)", "rgb(175,240,91)", "rgb(127,246,88)", "rgb(82,246,103)", "rgb(48,239,130)", "rgb(29,223,163)", "rgb(26,199,194)", "rgb(35,171,216)", "rgb(54,140,225)", "rgb(76,110,219)", "rgb(96,84,200)"],
-                c = {
-                    text: "",
-                    prefixP: -s,
-                    skillI: 0,
-                    skillP: 0,
-                    direction: "forward",
-                    delay: a,
-                    step: g
-                };
-            i()
-        };
-        binft(document.getElementById('binft'));
-    </script>
-
-
-    <div class='b'>
-        
-            <div class="m_search">
-                <form name="searchform" class="form u-search-form">
-                    <input type="text" class="input u-search-input" placeholder="频繁地记录着，因为生活被值得。" />
-                    <i class="icon fas fa-search fa-fw"></i>
-                </form>
-            </div>
-            
-                <div class='menu navigation'>
-                    <ul class='cover-list-h'>
-                        
-                            
-                                <li>
-                                    <a class="nav home" href="https://Codezhenyu.github.io/getting-started/" 
-                
-                id="https:Codezhenyugithubiogetting-started">
-                <i class='fas fa-book fa-fw'></i>文档
-              </a>
-                                </li>
-                                
-                                <li>
-                                    <a class="nav home" href="https://Codezhenyu.github.io/archives/" 
-                
-                id="https:Codezhenyugithubioarchives">
-                <i class='fas fa-rss fa-fw'></i>博文
-              </a>
-                                </li>
-                                
-                                <li>
-                                    <a class="nav home" href="https://github.com/Codezhenyu/" 
-                  rel="external nofollow noopener noreferrer"
-                
-                
-                  target="_blank"
-                
-                id="https:githubcomCodezhenyu">
-                <i class='fas fa-file-code fa-fw'></i>源码
-              </a>
-                                </li>
-                                
-                                    
-                    </ul>
-                </div>
-    </div>
-</div>
-      </cover>
-    
-    <div id="loading-bar-wrapper">
+  <div id="loading-bar-wrapper">
   <div id="loading-bar"></div>
 </div>
 <header class="l_header shadow">
@@ -398,32 +297,18 @@
 
 <script>setLoadingBarProgress(40);</script>
 
-  </div>
 
 
-  <div class="l_body">
+  <div class="l_body nocover">
     <div class='body-wrapper'>
       
 
 <div class='l_main'>
-	
-		
-  <section class="post-list ">
-    
-      
-        
-          
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
   
+
+  
+    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+      
 
 
   <section class='meta'>
@@ -433,11 +318,11 @@
       <div class="meta" id="header-meta">
         
           
-  <h2 class="title">
+  <h1 class="title">
     <a href="/2020/05/31/Github-hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
       Github-hexo博客搭建
     </a>
-  </h2>
+  </h1>
 
 
         
@@ -473,24 +358,6 @@
           
             
               
-  <div class="new-meta-item wordcount">
-    <a class='notlink'>
-      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>76 words</p>
-    </a>
-  </div>
-  <div class="new-meta-item readtime">
-    <a class='notlink'>
-      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>1 min</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
 
             
           
@@ -503,212 +370,67 @@
   </section>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <hr>
 <p>title: Github+hexo博客搭建<br>date: 2020-05-31 15:23:54<br>tags: </p>
 <ul>
 <li>博客搭建</li>
 <li>github<br>categories: hexo博客<br>​—</li>
 </ul>
 <p>耗费一晚上加一个上午时间算是搭建好了hexo博客，过程中也遇到很多问题。<br>好在有CSDN的大佬们的文章帮忙。希望能够持续更新博客哦！</p>
-      
-    </div>
-    
-      
-        <div class="button readmore">
-          <a href="/2020/05/31/Github-hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
-            阅读全文 <i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
+<a id="more"></a>
 
 
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
+
+
+
+
+
+
+
+
+
           
-  <h2 class="title">
-    <a href="/2020/05/31/hello-world/">
-      Hello World
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
+            <div class='article_footer'>
               
-<div class='new-meta-item author'>
-  <a href="https://zhenyume.xyz" target="_blank" rel="nofollow noopener">
-    <img src="https://cdn.jsdelivr.net/gh/Codezhenyu/CDN/img/touxiang.jpeg">
-    <p>zhenyu</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：May 31, 2020</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  <div class="new-meta-item wordcount">
-    <a class='notlink'>
-      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>73 words</p>
-    </a>
-  </div>
-  <div class="new-meta-item readtime">
-    <a class='notlink'>
-      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>1 min</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-    
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
-    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-    
-    
-
-  
-
-
-	
-</div>
-<aside class='l_side'>
-  
+                
   
     
     
 
-<section class="widget blogger shadow desktop mobile">
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
   <div class='content'>
     
-      
-        <a class='avatar flat-box' href='/about/'>
-          <img no-lazy src='https://cdn.jsdelivr.net/gh/Codezhenyu/CDN/img/touxiang.jpeg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
+      <blockquote>
         
-          <h2>Zhenyu's Blog</h2>
-        
-        
-          <p>祝你”岁岁常欢愉, 万事皆胜意”​。</p>
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
 
-        
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="mailto:chiangzhenyu@gmail.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
           
         
           
-            <a href="https://github.com/Codezhenyu"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
+            <p>本文永久链接是：zhenyume.xyz<a href=http://yoursite.com/2020/05/31/Github-hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/>http://yoursite.com/2020/05/31/Github-hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</a></p>
           
         
-          
-            <a href="https://music.163.com/#/user/home?id=1539307803"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-      </div>
+      </blockquote>
     
   </div>
 </section>
@@ -719,13 +441,200 @@
     
     
 
+<section class="widget qrcode  desktop mobile">
+  
+
+  <div class='content article-entry'>
+    
+      
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/qrcode/wiki_volantis.png'
+        
+          height='64px'
+        ></div>
+      
+    
+      
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/qrcode/wiki_volantis.png'
+        
+          height='64px'
+        ></div>
+      
+    
+  </div>
+</section>
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-05-31T15:30:54+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：May 31, 2020</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/05/31/Github-hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/&title=Github-hexo博客搭建 - Zhenyu's Blog | Choose distance.&summary=
+title: Github+hexo博客搭建date: 2020-05-31 15:23:54tags: 
+
+博客搭建
+githubcategories: hexo博客​—
+
+耗费一晚上加一个上午时间算是搭建好了hexo博客，过程中也遇到很多问题。好在有CSDN的大佬们的文章帮忙。希望能够持续更新博客哦！"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/2020/05/31/Github-hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/&title=Github-hexo博客搭建 - Zhenyu's Blog | Choose distance.&summary=
+title: Github+hexo博客搭建date: 2020-05-31 15:23:54tags: 
+
+博客搭建
+githubcategories: hexo博客​—
+
+耗费一晚上加一个上午时间算是搭建好了hexo博客，过程中也遇到很多问题。好在有CSDN的大佬们的文章帮忙。希望能够持续更新博客哦！"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/05/31/Github-hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/&title=Github-hexo博客搭建 - Zhenyu's Blog | Choose distance.&summary=
+title: Github+hexo博客搭建date: 2020-05-31 15:23:54tags: 
+
+博客搭建
+githubcategories: hexo博客​—
+
+耗费一晚上加一个上午时间算是搭建好了hexo博客，过程中也遇到很多问题。好在有CSDN的大佬们的文章帮忙。希望能够持续更新博客哦！"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+            
+              <a class='next' href='/2020/05/31/hello-world/'>
+                <p class='title'>Hello World<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any ...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box reveal comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+          </div>
+        </section>
+      
+      
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: 'Github-hexo博客搭建',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
   
 
   
     
     
 
-  
+
 
   
 
@@ -816,14 +725,6 @@
   </footer>
 
 <script>setLoadingBarProgress(80);</script>
-
-
-
-
-	<!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-	
-
-	
 
 
       <script>setLoadingBarProgress(60);</script>
@@ -938,6 +839,60 @@
 
 
 
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js"></script>
+
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var meta = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick','mail','link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function(item){
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+  var valine = new Valine();
+  function emoji(path, idx, ext) {
+      return path + "/" + path + "-" + idx + "." + ext;
+  }
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+  valine.init({
+    el: '#valine_container',
+    meta: meta,
+    
+    appId: "dogUA2FSKGTo029M1SEwGROT-MdYXbMMI",
+    appKey: "u0NdtQ8nvHoMdJPSYqm1LRxE",
+    placeholder: "快来评论吧~",
+    pageSize:'10',
+    avatar:'robohash',
+    lang:'zh-cn',
+    visitor: 'true',
+    highlight: 'true',
+    mathJax: 'false',
+    enableQQ: 'true',
+    requiredFields: requiredFields,
+    emojiCDN: 'https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/emoji/valine/',
+    emojiMaps: emojiMaps
+  })
+  </script>
 
 
 
