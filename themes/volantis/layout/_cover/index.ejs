@@ -1,0 +1,94 @@
+<div class='cover-body'>
+    <div class='a'>
+        <% if (theme.cover.logo) { %>
+            <img class='logo' src='<%- url_for(theme.cover.logo) %>' />
+            <% } %>
+                <% if (theme.cover.title) { %>
+                    <p class="title">
+                        <%- theme.cover.title ? theme.cover.title : config.title %>
+                    </p>
+                    <% } %>
+                        <% if (theme.cover.subtitle) { %>
+                            <p class="subtitle">
+                                <%- theme.cover.subtitle%>
+                            </p>
+                            <% } %>
+    </div>
+    <!-- 封面滚动字体 -->
+    <div id="binft"></div>
+    <script>
+        var binft = function(r) {
+            function t() {
+                return b[Math.floor(Math.random() * b.length)]
+            }
+
+            function e() {
+                return String.fromCharCode(94 * Math.random() + 33)
+            }
+
+            function n(r) {
+                for (var n = document.createDocumentFragment(), i = 0; r > i; i++) {
+                    var l = document.createElement("span");
+                    l.textContent = e(), l.style.color = t(), n.appendChild(l)
+                }
+                return n
+            }
+
+            function i() {
+                var t = o[c.skillI];
+                c.step ? c.step-- : (c.step = g, c.prefixP < l.length ? (c.prefixP >= 0 && (c.text += l[c.prefixP]), c.prefixP++) : "forward" === c.direction ? c.skillP < t.length ? (c.text += t[c.skillP], c.skillP++) : c.delay ? c.delay-- : (c.direction = "backward", c.delay = a) : c.skillP > 0 ? (c.text = c.text.slice(0, -1), c.skillP--) : (c.skillI = (c.skillI + 1) % o.length, c.direction = "forward")), r.textContent = c.text, r.appendChild(n(c.prefixP < l.length ? Math.min(s, s + c.prefixP) : Math.min(s, t.length - c.skillP))), setTimeout(i, d)
+            }
+            var l = "",
+                o = ["我始终相信 ，走过平湖烟雨岁月山河", "那些历尽劫数尝遍人间百味的人 ，会更加生动而干净", "跨过星河迈过月亮去迎接更好的自己", "若你现在肯努力，最坏的结果也是大器晚成", "希望你所拼命争取的，最后都能如你所愿", "愿山野浓雾都有路灯 ，风雨漂泊都能归舟"].map(function(r) {
+                    return r + ""
+                }),
+                a = 2,
+                g = 1,
+                s = 5,
+                d = 75,
+                b = ["rgb(16,119,241)", "rgb(150,61,179)", "rgb(191,60,175)", "rgb(228,65,157)", "rgb(254,75,131)", "rgb(255,94,99)", "rgb(255,120,71)", "rgb(251,150,51)", "rgb(226,183,47)", "rgb(198,214,60)", "rgb(175,240,91)", "rgb(127,246,88)", "rgb(82,246,103)", "rgb(48,239,130)", "rgb(29,223,163)", "rgb(26,199,194)", "rgb(35,171,216)", "rgb(54,140,225)", "rgb(76,110,219)", "rgb(96,84,200)"],
+                c = {
+                    text: "",
+                    prefixP: -s,
+                    skillI: 0,
+                    skillP: 0,
+                    direction: "forward",
+                    delay: a,
+                    step: g
+                };
+            i()
+        };
+        binft(document.getElementById('binft'));
+    </script>
+
+
+    <div class='b'>
+        <% if (theme.search.enable === true) { %>
+            <div class="m_search">
+                <form name="searchform" class="form u-search-form">
+                    <input type="text" class="input u-search-input" placeholder="<%- theme.cover && theme.cover.search %>" />
+                    <i class="icon fas fa-search fa-fw"></i>
+                </form>
+            </div>
+            <% } %>
+                <div class='menu navigation'>
+                    <ul class='cover-list-h'>
+                        <% if (theme.cover.features) { %>
+                            <% (theme.cover.features || []).forEach(function(value){ %>
+                                <li>
+                                    <a class="nav home" href="<%= url_for(value.url) %>" <% if (value.rel) { %>
+                  rel="<%- value.rel %>"
+                <% } %>
+                <% if (value.target) { %>
+                  target="<%- value.target %>"
+                <% } %>
+                id="<%= url_for(value.url).replace(/\/|%|\./g, "")?url_for(value.url).replace(/\/|%|\./g, ""):"home" %>">
+                <% if (value.icon) { %><i class='<%= value.icon %> fa-fw'></i><% } %><%- value.name %>
+              </a>
+                                </li>
+                                <%})%>
+                                    <% } %>
+                    </ul>
+                </div>
+    </div>
+</div>
