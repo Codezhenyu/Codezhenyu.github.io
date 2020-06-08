@@ -5,8 +5,6 @@
     <!-- SEO相关 -->
     
             
-                                <meta name="robots" content="noindex,follow">
-                                
                                             
                                                 <!-- 渲染优化 -->
                                                 <meta name="renderer" content="webkit">
@@ -20,11 +18,13 @@
                                                 
                                                     <title>
                                                         
-                                                            Archive: 2020 -
+                                                            数据结构实习计划表 -
                                                                 
                                                                     Zhenyu&#39;s Blog | 生活值得被记录.
                                                     </title>
                                                     
+                                                        <meta name="keywords" content="数据结构">
+                                                        
                                                             
 
                                                                     <!-- feed -->
@@ -76,114 +76,7 @@
 </head>
 <body>
   
-  <div class="cover-wrapper">
-    
-      <cover class='cover  half'>
-        <div class='cover-body'>
-    <div class='a'>
-        
-            <img class='logo' src='https://cdn.jsdelivr.net/gh/Codezhenyu/CDN/img/logo.png' />
-            
-                
-                        
-    </div>
-    <!-- 封面滚动字体 -->
-    <div id="binft"></div>
-    <script>
-        var binft = function(r) {
-            function t() {
-                return b[Math.floor(Math.random() * b.length)]
-            }
-
-            function e() {
-                return String.fromCharCode(94 * Math.random() + 33)
-            }
-
-            function n(r) {
-                for (var n = document.createDocumentFragment(), i = 0; r > i; i++) {
-                    var l = document.createElement("span");
-                    l.textContent = e(), l.style.color = t(), n.appendChild(l)
-                }
-                return n
-            }
-
-            function i() {
-                var t = o[c.skillI];
-                c.step ? c.step-- : (c.step = g, c.prefixP < l.length ? (c.prefixP >= 0 && (c.text += l[c.prefixP]), c.prefixP++) : "forward" === c.direction ? c.skillP < t.length ? (c.text += t[c.skillP], c.skillP++) : c.delay ? c.delay-- : (c.direction = "backward", c.delay = a) : c.skillP > 0 ? (c.text = c.text.slice(0, -1), c.skillP--) : (c.skillI = (c.skillI + 1) % o.length, c.direction = "forward")), r.textContent = c.text, r.appendChild(n(c.prefixP < l.length ? Math.min(s, s + c.prefixP) : Math.min(s, t.length - c.skillP))), setTimeout(i, d)
-            }
-            var l = "",
-                o = ["我始终相信 ，走过平湖烟雨岁月山河", "那些历尽劫数尝遍人间百味的人 ，会更加生动而干净", "跨过星河迈过月亮去迎接更好的自己", "若你现在肯努力，最坏的结果也是大器晚成", "希望你所拼命争取的，最后都能如你所愿", "愿山野浓雾都有路灯 ，风雨漂泊都能归舟"].map(function(r) {
-                    return r + ""
-                }),
-                a = 2,
-                g = 1,
-                s = 5,
-                d = 75,
-                b = ["rgb(16,119,241)", "rgb(150,61,179)", "rgb(191,60,175)", "rgb(228,65,157)", "rgb(254,75,131)", "rgb(255,94,99)", "rgb(255,120,71)", "rgb(251,150,51)", "rgb(226,183,47)", "rgb(198,214,60)", "rgb(175,240,91)", "rgb(127,246,88)", "rgb(82,246,103)", "rgb(48,239,130)", "rgb(29,223,163)", "rgb(26,199,194)", "rgb(35,171,216)", "rgb(54,140,225)", "rgb(76,110,219)", "rgb(96,84,200)"],
-                c = {
-                    text: "",
-                    prefixP: -s,
-                    skillI: 0,
-                    skillP: 0,
-                    direction: "forward",
-                    delay: a,
-                    step: g
-                };
-            i()
-        };
-        binft(document.getElementById('binft'));
-    </script>
-
-
-    <div class='b'>
-        
-            <div class="m_search">
-                <form name="searchform" class="form u-search-form">
-                    <input type="text" class="input u-search-input" placeholder="频繁地记录着，因为生活被值得。" />
-                    <i class="icon fas fa-search fa-fw"></i>
-                </form>
-            </div>
-            
-                <div class='menu navigation'>
-                    <ul class='cover-list-h'>
-                        
-                            
-                                <li>
-                                    <a class="nav home" href="https://Codezhenyu.github.io/getting-started/" 
-                
-                id="https:Codezhenyugithubiogetting-started">
-                <i class='fas fa-book fa-fw'></i>文档
-              </a>
-                                </li>
-                                
-                                <li>
-                                    <a class="nav home" href="https://Codezhenyu.github.io/archives/" 
-                
-                id="https:Codezhenyugithubioarchives">
-                <i class='fas fa-rss fa-fw'></i>博文
-              </a>
-                                </li>
-                                
-                                <li>
-                                    <a class="nav home" href="https://github.com/Codezhenyu/" 
-                  rel="external nofollow noopener noreferrer"
-                
-                
-                  target="_blank"
-                
-                id="https:githubcomCodezhenyu">
-                <i class='fas fa-file-code fa-fw'></i>源码
-              </a>
-                                </li>
-                                
-                                    
-                    </ul>
-                </div>
-    </div>
-</div>
-      </cover>
-    
-    <div id="loading-bar-wrapper">
+  <div id="loading-bar-wrapper">
   <div id="loading-bar"></div>
 </div>
 <header class="l_header shadow">
@@ -404,36 +297,18 @@
 
 <script>setLoadingBarProgress(40);</script>
 
-  </div>
 
 
-  <div class="l_body">
+  <div class="l_body nocover">
     <div class='body-wrapper'>
       
 
 <div class='l_main'>
-	
-		
-  <section class="post-list ">
-    
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
   
+
+  
+    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+      
 
 
   <section class='meta'>
@@ -443,11 +318,11 @@
       <div class="meta" id="header-meta">
         
           
-  <h2 class="title">
+  <h1 class="title">
     <a href="/2020/06/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9E%E4%B9%A0%E5%86%85%E5%AE%B9/">
       数据结构实习计划表
     </a>
-  </h2>
+  </h1>
 
 
         
@@ -491,24 +366,6 @@
           
             
               
-  <div class="new-meta-item wordcount">
-    <a class='notlink'>
-      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>9 words</p>
-    </a>
-  </div>
-  <div class="new-meta-item readtime">
-    <a class='notlink'>
-      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>1 min</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
 
             
           
@@ -521,376 +378,234 @@
   </section>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="数据结构实习计划表："><a href="#数据结构实习计划表：" class="headerlink" title="数据结构实习计划表："></a>数据结构实习计划表：</h1><p><img src="https://s1.ax1x.com/2020/06/08/thCIUK.jpg" alt="thCIUK.jpg"><br><img src="https://s1.ax1x.com/2020/06/08/thC5E6.jpg" alt="thC5E6.jpg"></p>
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <h1 id="数据结构实习计划表："><a href="#数据结构实习计划表：" class="headerlink" title="数据结构实习计划表："></a>数据结构实习计划表：</h1><p><img src="https://s1.ax1x.com/2020/06/08/thCIUK.jpg" alt="thCIUK.jpg"><br><img src="https://s1.ax1x.com/2020/06/08/thC5E6.jpg" alt="thC5E6.jpg"></p>
 
-      
-    </div>
+          
+            <div class='article_footer'>
+              
+                
+  
     
-      
     
-  </section>
-</article>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
+
+
   
 
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/06/04/%E7%A7%91%E7%9B%AE%E4%BA%8C%E8%80%83%E8%AF%95%E5%85%A8%E6%B5%81%E7%A8%8B%E8%AF%A6%E8%A7%A3/">
-      科目二考试全过程（转）
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a href="https://zhenyume.xyz" target="_blank" rel="nofollow noopener">
-    <img src="https://cdn.jsdelivr.net/gh/Codezhenyu/CDN/img/touxiang.jpeg">
-    <p>zhenyu</p>
-  </a>
-</div>
-
-            
-          
-            
-              
   
-  <div class='new-meta-item category'>
-    <a href='/categories/%E8%80%83%E8%AF%81/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>考证</p>
-    </a>
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
+        
+          
+            <p>愿你三冬暖，愿你春不寒，愿你天黑有灯下雨有伞，愿你路上有良人相伴。</p>
+
+          
+        
+          
+            <p>本博客内容涉及有关参考资料、教程、链接如有侵权请联系我删除！永久链接：<a href="http://www.zhenyume.xyz" target="_blank" rel="noopener">www.zhenyume.xyz</a></p>
+
+          
+        
+      </blockquote>
+    
   </div>
+</section>
+
+  
+
+  
+    
+    
+
+<section class="widget qrcode  desktop mobile">
+  
+
+  <div class='content article-entry'>
+    
+      
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/Codezhenyu/CDN/img/weixin.jpg'
+        
+          height='64px'
+        ></div>
+      
+    
+      
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/Codezhenyu/CDN/img/qq.jpg'
+        
+          height='64px'
+        ></div>
+      
+    
+  </div>
+</section>
+
+  
 
 
-            
+              
+            </div>
           
-            
-              <div class="new-meta-item date">
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-08T20:04:00+08:00">
   <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Jun 4, 2020</p>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：Jun 8, 2020</p>
   </a>
 </div>
 
-            
-          
-            
-              
-  <div class="new-meta-item wordcount">
-    <a class='notlink'>
-      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>2.7k words</p>
-    </a>
-  </div>
-  <div class="new-meta-item readtime">
-    <a class='notlink'>
-      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>9 min</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
         
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
       
-        <p>[TOC]</p>
-<h1 id="“三字诀”：慢、稳、准"><a href="#“三字诀”：慢、稳、准" class="headerlink" title="“三字诀”：慢、稳、准"></a>“三字诀”：慢、稳、准</h1><p><strong>慢</strong>：速度要慢，慢是完成一系列操作的基础，只有慢一点才能给你足够的反应时间。</p>
-<p><strong>稳</strong>：心态平和，不紧张，不慌乱；操控要稳。</p>
-<p><strong>准</strong>：看准点位，把握好火候，方向盘要打准。</p>
-<p><img src="https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=294259652,3465085128&fm=173&app=25&f=JPEG?w=640&h=405&s=B84ABE56D38F414B02E4777B0300107E" alt=""></p>
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>数据结构</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/06/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9E%E4%B9%A0%E5%86%85%E5%AE%B9/&title=数据结构实习计划表 - Zhenyu's Blog | 生活值得被记录.&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/2020/06/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9E%E4%B9%A0%E5%86%85%E5%AE%B9/&title=数据结构实习计划表 - Zhenyu's Blog | 生活值得被记录.&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/06/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9E%E4%B9%A0%E5%86%85%E5%AE%B9/&title=数据结构实习计划表 - Zhenyu's Blog | 生活值得被记录.&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
       
     </div>
-    
-      
-        <div class="button readmore">
-          <a href="/2020/06/04/%E7%A7%91%E7%9B%AE%E4%BA%8C%E8%80%83%E8%AF%95%E5%85%A8%E6%B5%81%E7%A8%8B%E8%AF%A6%E8%A7%A3/">
-            阅读全文 <i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
-      
-    
   </section>
-</article>
 
+
+        
+        
+          <div class="prev-next">
+            
+            
+              <a class='next' href='/2020/06/04/%E7%A7%91%E7%9B%AE%E4%BA%8C%E8%80%83%E8%AF%95%E5%85%A8%E6%B5%81%E7%A8%8B%E8%AF%A6%E8%A7%A3/'>
+                <p class='title'>科目二考试全过程（转）<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>[TOC]
+“三字诀”：慢、稳、准慢：速度要慢，慢是完成一系列操作的基础，只有慢一点才能给你足够的反应时间。
+稳：心态平和，不紧张，不慌乱；操控要稳。
+准：看准点位，把握好火候，方向盘要打准。
+...</p>
+              </a>
+            
           </div>
         
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
+      </section>
+    </article>
   
 
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/05/31/%E9%A9%BE%E8%80%83%E7%A7%91%E7%9B%AE%E4%BA%8C%E8%A6%81%E7%82%B9/">
-      驾考科目二要点
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a href="https://zhenyume.xyz" target="_blank" rel="nofollow noopener">
-    <img src="https://cdn.jsdelivr.net/gh/Codezhenyu/CDN/img/touxiang.jpeg">
-    <p>zhenyu</p>
-  </a>
-</div>
-
-            
-          
-            
-              
   
-  <div class='new-meta-item category'>
-    <a href='/categories/%E8%80%83%E8%AF%81/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>考证</p>
-    </a>
-  </div>
+    <!-- 显示推荐文章和评论 -->
 
 
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：May 31, 2020</p>
-  </a>
-</div>
 
-            
-          
-            
-              
-  <div class="new-meta-item wordcount">
-    <a class='notlink'>
-      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>361 words</p>
-    </a>
-  </div>
-  <div class="new-meta-item readtime">
-    <a class='notlink'>
-      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>1 min</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
+  <article class="post white-box reveal comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 欢迎评论</p>
       
-        <p>[toc]</p>
-<p>原来二月份要考的科目二，好久没练车，忘得一干二净……别躺了，6月份开始继续练车。</p>
-<p><a href=""><img src="https://s1.ax1x.com/2020/06/01/t8QdUK.md.jpg" alt="t8QdUK.md.jpg"></a></p>
       
-    </div>
-    
       
-        <div class="button readmore">
-          <a href="/2020/05/31/%E9%A9%BE%E8%80%83%E7%A7%91%E7%9B%AE%E4%BA%8C%E8%A6%81%E7%82%B9/">
-            阅读全文 <i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
       
-    
-  </section>
-</article>
-
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
           </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
+        </section>
       
       
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/05/31/Github-hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
-      Github+hexo博客搭建
-    </a>
-  </h2>
+    </section>
+  </article>
 
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a href="https://zhenyume.xyz" target="_blank" rel="nofollow noopener">
-    <img src="https://cdn.jsdelivr.net/gh/Codezhenyu/CDN/img/touxiang.jpeg">
-    <p>zhenyu</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>hexo博客搭建</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：May 31, 2020</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  <div class="new-meta-item wordcount">
-    <a class='notlink'>
-      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>60 words</p>
-    </a>
-  </div>
-  <div class="new-meta-item readtime">
-    <a class='notlink'>
-      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>1 min</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>hexo静态博客搭建</p>
-      
-    </div>
-    
-      
-        <div class="button readmore">
-          <a href="/2020/05/31/Github-hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
-            阅读全文 <i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
-    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-    
-    
 
   
 
 
-	
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: '数据结构实习计划表',
+      tools: true
+    }
+  </script>
+
+
 </div>
 <aside class='l_side'>
   
@@ -1016,6 +731,28 @@
 
   
 
+  
+    
+    
+
+
+  <section class="widget toc-wrapper shadow desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+      
+    </div>
+  </section>
+
+
+  
+
 
 </aside>
 
@@ -1103,14 +840,6 @@
   </footer>
 
 <script>setLoadingBarProgress(80);</script>
-
-
-
-
-	<!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-	
-
-	
 
 
       <script>setLoadingBarProgress(60);</script>
@@ -1225,6 +954,60 @@
 
 
 
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js"></script>
+
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var meta = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick','mail','link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function(item){
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+  var valine = new Valine();
+  function emoji(path, idx, ext) {
+      return path + "/" + path + "-" + idx + "." + ext;
+  }
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+  valine.init({
+    el: '#valine_container',
+    meta: meta,
+    
+    appId: "dogUA2FSKGTo029M1SEwGROT-MdYXbMMI",
+    appKey: "u0NdtQ8nvHoMdJPSYqm1LRxE",
+    placeholder: "阅读上面的材料，根据要求写一篇不少于800字的文章 (本题60分)",
+    pageSize:'10',
+    avatar:'robohash',
+    lang:'zh-cn',
+    visitor: 'true',
+    highlight: 'true',
+    mathJax: 'false',
+    enableQQ: 'true',
+    requiredFields: requiredFields,
+    emojiCDN: 'https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/emoji/valine/',
+    emojiMaps: emojiMaps
+  })
+  </script>
 
 
 
