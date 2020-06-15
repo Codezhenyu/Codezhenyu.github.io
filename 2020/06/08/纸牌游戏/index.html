@@ -26,6 +26,8 @@
                                                         <meta name="keywords" content="数据结构">
                                                         
                                                             
+                                                                <meta name="description" content="[题目]：编号为1-52张牌，正面向上，从第2张开始，以2为基数，是2的倍数的牌翻一次，直到最后一张牌；然后，从第3张开始，以3为基数，是3的倍数的牌翻一次，直到最后一张牌；然后从第4张开始，以4为基数，是4的倍数的牌翻一次，直到最后一张牌；……直到以52为基数的牌翻过，这时正面向上的牌有哪些？请设计算法编写程序...">
+                                                                
 
                                                                     <!-- feed -->
                                                                     
@@ -384,6 +386,8 @@
         <div class="article-entry" itemprop="articleBody">
           
           <p><strong>[题目]</strong>：编号为1-52张牌，正面向上，从第2张开始，以2为基数，是2的倍数的牌翻一次，直到最后一张牌；然后，从第3张开始，以3为基数，是3的倍数的牌翻一次，直到最后一张牌；然后从第4张开始，以4为基数，是4的倍数的牌翻一次，直到最后一张牌；……直到以52为基数的牌翻过，这时正面向上的牌有哪些？请设计算法编写程序输出最终正面向上的纸牌的编号。</p>
+<a id="more"></a>
+
 <p><strong>[代码设计]：</strong></p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 52</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"> <span class="keyword">int</span> i,j;</span><br><span class="line"> <span class="keyword">int</span> card[N] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line"> <span class="keyword">for</span> (i = <span class="number">2</span>;i &lt;= N;i++)</span><br><span class="line">  <span class="keyword">for</span> (j = <span class="number">2</span>;j &lt;= N;j++)</span><br><span class="line">   <span class="keyword">if</span> (i % j == <span class="number">0</span>)</span><br><span class="line">   &#123;</span><br><span class="line">    <span class="keyword">if</span> (card[i<span class="number">-1</span>])</span><br><span class="line">     card[i<span class="number">-1</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">else</span> card[i<span class="number">-1</span>] = <span class="number">1</span>;</span><br><span class="line">   &#125;</span><br><span class="line"> <span class="built_in">printf</span>(<span class="string">"最后正面向上的扑克牌为:\n"</span>);</span><br><span class="line"> <span class="keyword">for</span> (i = <span class="number">0</span>;i &lt; N;i++)</span><br><span class="line">  <span class="keyword">if</span> (card[i]==<span class="number">0</span>)</span><br><span class="line">   <span class="built_in">printf</span>(<span class="string">"第%d张\n"</span>,i + <span class="number">1</span>);</span><br><span class="line"> <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line"> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -475,10 +479,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-08T21:50:07+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-15T19:36:34+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Jun 8, 2020</p>
+    <p>更新于：Jun 15, 2020</p>
   </a>
 </div>
 
@@ -505,7 +509,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/06/08/%E7%BA%B8%E7%89%8C%E6%B8%B8%E6%88%8F/&title=纸牌游戏 - Zhenyu's Blog | 生活值得被记录.&summary="
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/06/08/%E7%BA%B8%E7%89%8C%E6%B8%B8%E6%88%8F/&title=纸牌游戏 - Zhenyu's Blog | 生活值得被记录.&summary=[题目]：编号为1-52张牌，正面向上，从第2张开始，以2为基数，是2的倍数的牌翻一次，直到最后一张牌；然后，从第3张开始，以3为基数，是3的倍数的牌翻一次，直到最后一张牌；然后从第4张开始，以4为基数，是4的倍数的牌翻一次，直到最后一张牌；……直到以52为基数的牌翻过，这时正面向上的牌有哪些？请设计算法编写程序输出最终正面向上的纸牌的编号。"
           
           >
           
@@ -517,7 +521,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/2020/06/08/%E7%BA%B8%E7%89%8C%E6%B8%B8%E6%88%8F/&title=纸牌游戏 - Zhenyu's Blog | 生活值得被记录.&summary="
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/2020/06/08/%E7%BA%B8%E7%89%8C%E6%B8%B8%E6%88%8F/&title=纸牌游戏 - Zhenyu's Blog | 生活值得被记录.&summary=[题目]：编号为1-52张牌，正面向上，从第2张开始，以2为基数，是2的倍数的牌翻一次，直到最后一张牌；然后，从第3张开始，以3为基数，是3的倍数的牌翻一次，直到最后一张牌；然后从第4张开始，以4为基数，是4的倍数的牌翻一次，直到最后一张牌；……直到以52为基数的牌翻过，这时正面向上的牌有哪些？请设计算法编写程序输出最终正面向上的纸牌的编号。"
           
           >
           
@@ -529,7 +533,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/06/08/%E7%BA%B8%E7%89%8C%E6%B8%B8%E6%88%8F/&title=纸牌游戏 - Zhenyu's Blog | 生活值得被记录.&summary="
+          href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/06/08/%E7%BA%B8%E7%89%8C%E6%B8%B8%E6%88%8F/&title=纸牌游戏 - Zhenyu's Blog | 生活值得被记录.&summary=[题目]：编号为1-52张牌，正面向上，从第2张开始，以2为基数，是2的倍数的牌翻一次，直到最后一张牌；然后，从第3张开始，以3为基数，是3的倍数的牌翻一次，直到最后一张牌；然后从第4张开始，以4为基数，是4的倍数的牌翻一次，直到最后一张牌；……直到以52为基数的牌翻过，这时正面向上的牌有哪些？请设计算法编写程序输出最终正面向上的纸牌的编号。"
           
           >
           
@@ -564,13 +568,17 @@
 （1）能够按照指数降序排列建立并输出多项式；
 （2）能够完成两个多项式的相加、相减，并将结果输出；
 程序：
-123456789...</p>
+
+
+1234567...</p>
               </a>
             
             
               <a class='next' href='/2020/06/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9E%E4%B9%A0%E5%86%85%E5%AE%B9/'>
                 <p class='title'>数据结构实习计划表<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
                 <p class='content'>数据结构实习计划表：
+
+
 </p>
               </a>
             
