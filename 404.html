@@ -352,27 +352,36 @@
     <!-- 显示推荐文章和评论 -->
 
 
-
-  <article class="post white-box reveal comments shadow">
-    <section class="article typo">
-      <p ct><i class='fas fa-comments'></i> 欢迎评论</p>
-      
-      
-      
-      
-      
-      
-        <section id="comments">
-          <div id="valine_container" class="valine_thread">
-            <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
-          </div>
-        </section>
-      
-      
-    </section>
-  </article>
-
-
+    
+        <article class="post white-box reveal comments shadow">
+            <section class="article typo">
+                <p ct>
+                    <i class='fas fa-comments'></i> 欢迎评论
+                </p>
+                
+                        
+                                
+                                        
+                                                
+                                                        
+                                                            <section id="comments">
+                                                                <div id="valine_container" class="valine_thread">
+                                                                    <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+                                                                </div>
+                                                                <!-- valine 添加一言 -->
+                                                                <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+                                                                <script type="text/javascript">
+                                                                    jinrishici.load(function(result) {
+                                                                        var jrsc_plac = result.data.content + "\n「" + result.data.origin.title + "」" + result.data.origin.dynasty + " · " + result.data.origin.author
+                                                                        document.getElementById("veditor").setAttribute("placeholder", jrsc_plac);
+                                                                    });
+                                                                </script>
+                                                            </section>
+                                                            
+                                                                
+            </section>
+        </article>
+        
   
 
 

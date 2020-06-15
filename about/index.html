@@ -352,27 +352,36 @@
     <!-- 显示推荐文章和评论 -->
 
 
-
-  <article class="post white-box reveal comments shadow">
-    <section class="article typo">
-      <p ct><i class='fas fa-comments'></i> 欢迎评论</p>
-      
-      
-      
-      
-      
-      
-        <section id="comments">
-          <div id="valine_container" class="valine_thread">
-            <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
-          </div>
-        </section>
-      
-      
-    </section>
-  </article>
-
-
+    
+        <article class="post white-box reveal comments shadow">
+            <section class="article typo">
+                <p ct>
+                    <i class='fas fa-comments'></i> 欢迎评论
+                </p>
+                
+                        
+                                
+                                        
+                                                
+                                                        
+                                                            <section id="comments">
+                                                                <div id="valine_container" class="valine_thread">
+                                                                    <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+                                                                </div>
+                                                                <!-- valine 添加一言 -->
+                                                                <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+                                                                <script type="text/javascript">
+                                                                    jinrishici.load(function(result) {
+                                                                        var jrsc_plac = result.data.content + "\n「" + result.data.origin.title + "」" + result.data.origin.dynasty + " · " + result.data.origin.author
+                                                                        document.getElementById("veditor").setAttribute("placeholder", jrsc_plac);
+                                                                    });
+                                                                </script>
+                                                            </section>
+                                                            
+                                                                
+            </section>
+        </article>
+        
   
 
 
@@ -408,6 +417,9 @@
           <p>祝你”岁岁常欢愉, 万事皆胜意。”</p>
 
         
+        
+          <p><span id="jinrishici-sentence">Zhenyu's Blog | 生活值得被记录.</span></p>
+          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
         
       </div>
     
@@ -454,7 +466,7 @@
     
   <header>
     
-      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <a href='/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
     
   </header>
 
@@ -471,6 +483,11 @@
             title="/categories/%E5%AE%9E%E4%B9%A0/" href="/categories/%E5%AE%9E%E4%B9%A0/"
             id="categoriesE5AE9EE4B9A0"
             ><div class='name'>实习</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E7%BC%96%E7%A8%8B%E5%9B%B0%E6%83%91/" href="/categories/%E7%BC%96%E7%A8%8B%E5%9B%B0%E6%83%91/"
+            id="categoriesE7BC96E7A88BE59BB0E68391"
+            ><div class='name'>编程困惑</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E8%80%83%E8%AF%81/" href="/categories/%E8%80%83%E8%AF%81/"
@@ -493,13 +510,13 @@
     
   <header>
     
-      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
+      <a href='/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
     
   </header>
 
 
     <div class='content'>
-      <a href="/tags/github/" style="font-size: 14px; color: #413a3a">github</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 14px; color: #413a3a">博客搭建</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 24px; color: #413a3a">数据结构</a> <a href="/tags/%E9%A9%BE%E8%80%83/" style="font-size: 24px; color: #413a3a">驾考</a>
+      <a href="/tags/C/" style="font-size: 14px; color: #413a3a">C</a> <a href="/tags/github/" style="font-size: 14px; color: #413a3a">github</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 14px; color: #413a3a">博客搭建</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 24px; color: #413a3a">数据结构</a> <a href="/tags/%E9%A9%BE%E8%80%83/" style="font-size: 24px; color: #413a3a">驾考</a>
     </div>
   </section>
 
