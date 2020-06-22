@@ -1,4 +1,7 @@
-
+---
+layout: false
+---
+{% raw %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -443,8 +446,8 @@ body {
             </div>
             <!-- 两个按钮 -->
             <div class="meBox-Button">
-                <a href="https://www.zhenyume.xyz/" target="_blank" rel="noopener">关于</a>
-                <a href="http://www.zhenyume.xyz/" target="_blank" rel="noopener">联系</a>
+                <a href="https://www.zhenyume.xyz/">关于</a>
+                <a href="http://www.zhenyume.xyz/">联系</a>
             </div>
         </div>
 
@@ -506,7 +509,7 @@ body {
                     <span style="color: rgb(39, 39, 39);">./links.sh</span>
                     <p>我的站点：</p>
                     <ul class="ul">
-                        <li><a href="https://zhenyume.xyz" target="_blank" rel="noopener">Blog</a></li>
+                        <li><a href="https://zhenyume.xyz">Blog</a></li>
                         <li><a href="#">Navigation</a></li>
                         <li><a href="#">Note</a></li>
                     </ul>
@@ -520,9 +523,10 @@ body {
     <!-- 页脚 -->
     <div id="footer">
         <p>© 2020 zhenyu | <a href="">萌ICP备20210520</a></p>
-        <p>THEME MADE BY <a href="http://www.zhenyume.xyz/" target="_blank" rel="noopener">Zhenyu</a></p>
+        <p>THEME MADE BY <a href="http://www.zhenyume.xyz/">Zhenyu</a></p>
     </div>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</body>
 
 </html>
 
+{% endraw %}
