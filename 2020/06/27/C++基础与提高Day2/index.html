@@ -18,15 +18,17 @@
                                                 
                                                     <title>
                                                         
-                                                            hexo+github博客功能优化 -
+                                                            C++基础与提高：Day2 C++对C的Externsion -
                                                                 
                                                                     Zhenyu&#39;s Blog | 生活值得被记录.
                                                     </title>
                                                     
-                                                        <meta name="keywords" content="github">
+                                                        <meta name="keywords" content="C++">
                                                         
                                                             
-                                                                <meta name="description" content="hexo博客的功能优化（6.22）花费一天的时间，优化了博客中可能出现的页面的功能，如404，about的页面的非渲染。">
+                                                                <meta name="description" content="引用规则：
+引用没有定义，是一种关系型声明。声明它和原有的某一变量的关系。故而类型与原类型保持一致，且不分配内存。与被引用的变量有相同的地址。
+声明的时候必须初始化，一经声明，不可以更变。">
                                                                 
 
                                                                     <!-- feed -->
@@ -355,8 +357,8 @@
         
           
   <h1 class="title">
-    <a href="/2020/06/22/%E5%8D%9A%E5%AE%A2%E5%8A%9F%E8%83%BD%E7%9A%84%E4%BC%98%E5%8C%96/">
-      hexo+github博客功能优化
+    <a href="/2020/06/27/C++%E5%9F%BA%E7%A1%80%E4%B8%8E%E6%8F%90%E9%AB%98Day2/">
+      C++基础与提高：Day2 C++对C的Externsion
     </a>
   </h1>
 
@@ -381,9 +383,9 @@
               
   
   <div class='new-meta-item category'>
-    <a href='/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/' rel="nofollow">
+    <a href='/categories/%E6%9A%91%E5%81%87%E7%BC%96%E7%A8%8B/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>博客搭建</p>
+      <p>暑假编程</p>
     </a>
   </div>
 
@@ -394,7 +396,7 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Jun 22, 2020</p>
+    <p>发布于：Jun 27, 2020</p>
   </a>
 </div>
 
@@ -405,13 +407,13 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>129 words</p>
+      <p>605 words</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>1 min</p>
+      <p>2 min</p>
     </a>
   </div>
 
@@ -435,10 +437,34 @@
       <section class="article typo">
         <div class="article-entry" itemprop="articleBody">
           
-          <h1 id="hexo博客的功能优化（6-22）"><a href="#hexo博客的功能优化（6-22）" class="headerlink" title="hexo博客的功能优化（6.22）"></a>hexo博客的功能优化（6.22）</h1><p>花费一天的时间，优化了博客中可能出现的页面的功能，如404，about的页面的非渲染。</p>
+          <h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><p>规则：</p>
+<p>引用没有定义，是一种关系型声明。声明它和原有的某一变量的关系。故而类型与原类型保持一致，且不分配内存。与被引用的变量有相同的地址。</p>
+<p>声明的时候必须初始化，一经声明，不可以更变。</p>
 <a id="more"></a>
 
-<p>其次再次搭建了导航网页，经过很长时间的CDN的调试，图片还是无法正常显示，应该是main.js中的js函数调用的仍然是本地的图片吧，有时间再继续慢慢研究了。总之现在博客的功能趋于完善，加油更新博客内容咯~~</p>
+<p>可对引用，再次引用。多次引用的结果是某一变量具有多个别名。</p>
+<p>&amp;符号前有数据类型时，是引用。其他皆为取地址。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a,b;</span><br><span class="line">	<span class="keyword">int</span> &amp;r = a;</span><br><span class="line">	<span class="keyword">int</span> &amp;r = b;<span class="comment">//错误，不可以更改原有的引用关系</span></span><br><span class="line">	<span class="keyword">float</span> &amp;rr = b; <span class="comment">//错误，引用类型不匹配。</span></span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;&amp;a&lt;&lt;&amp;r&lt;&lt;<span class="built_in">endl</span>; <span class="comment">//变量与引用具有相同的地址。</span></span><br><span class="line">	<span class="keyword">int</span> &amp;ra=r; <span class="comment">//可对引用更次引用，表示a变量有两个别名，分别是r和ra</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><p>​    c++很少使用独立变量的引用，如果使用某一个变量，就直接使用它的原名，没有必要去使用他的别名。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> &amp;a,<span class="keyword">int</span> &amp;b)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> tmp;</span><br><span class="line">	tmp = a;</span><br><span class="line">	a = b;</span><br><span class="line">	b = tmp; </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a = <span class="number">3</span>,b = <span class="number">5</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"a = "</span>&lt;&lt;a&lt;&lt;<span class="string">"b = "</span>&lt;&lt;b&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    swap(a,b);</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"a = "</span>&lt;&lt;a&lt;&lt;<span class="string">"b = "</span>&lt;&lt;b&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="引用提高"><a href="#引用提高" class="headerlink" title="引用提高"></a>引用提高</h2><pre><code>1.  可以定义指针的引用，但不能定义引用的引用。</code></pre><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a;</span><br><span class="line"><span class="keyword">int</span>*p = &amp;a;</span><br><span class="line"><span class="keyword">int</span>* &amp;rp =p; <span class="comment">//ok</span></span><br><span class="line"><span class="keyword">int</span>&amp; r = a;</span><br><span class="line"><span class="keyword">int</span>&amp;&amp; rr =r; <span class="comment">//error</span></span><br></pre></td></tr></table></figure>
+
+<p>例子：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">char</span> *p,<span class="keyword">char</span> *pb)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> *t;</span><br><span class="line">	t = pa;</span><br><span class="line">	pa = pb;</span><br><span class="line">	pb = t;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap2</span><span class="params">(<span class="keyword">char</span> **pa,<span class="keyword">char</span> **pb)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> *t;</span><br><span class="line">	t = *pa;</span><br><span class="line">	*pa = *pb;</span><br><span class="line">	*pb = t;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap3</span><span class="params">(<span class="keyword">char</span> *&amp;pa,<span class="keyword">char</span> *&amp;pb)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> *t;</span><br><span class="line">	t = pa;</span><br><span class="line">	pa = pb;</span><br><span class="line">	pb = t;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> *pa =<span class="string">"china"</span>;</span><br><span class="line">    <span class="keyword">char</span> *pb =<span class="string">"america"</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"pa"</span>&lt;&lt;pa&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"pb"</span>&lt;&lt;pb&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line"><span class="comment">//swap(pa,pb);</span></span><br><span class="line"><span class="comment">//swap2(&amp;pa,&amp;pb);</span></span><br><span class="line">  swap3(pa,pb);</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"pa "</span>&lt;&lt;pa&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"pb "</span>&lt;&lt;pb&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>可以定义指针的指针，（即二级指针），但不能定义引用的指针。</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a;</span><br><span class="line"><span class="keyword">int</span> *p = &amp;a;</span><br><span class="line"><span class="keyword">int</span> **pp = &amp;p; <span class="comment">//ok</span></span><br><span class="line"><span class="keyword">int</span>&amp; r = a;</span><br><span class="line"><span class="keyword">int</span>&amp;* pr= &amp;r; <span class="comment">//error</span></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>可以定义指针数组，但不能定义引用数组，可以定义数组引用。</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a,b,c;</span><br><span class="line"><span class="keyword">int</span>* parr[]=&#123;&amp;a,&amp;b,&amp;c&#125;; <span class="comment">//ok</span></span><br><span class="line"><span class="keyword">int</span>&amp; rarr[]=&#123;a,b,c&#125;: <span class="comment">//error</span></span><br><span class="line"><span class="keyword">int</span> arr[]=&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> (&amp;rarr)[<span class="number">3</span>] = arr; <span class="comment">//ok</span></span><br></pre></td></tr></table></figure>
+
+<p>未完待续…… 2020年6月27日 23:06:47</p>
 
           
             <div class='article_footer'>
@@ -527,10 +553,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-22T21:44:09+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-27T23:08:45+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Jun 22, 2020</p>
+    <p>更新于：Jun 27, 2020</p>
   </a>
 </div>
 
@@ -539,7 +565,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/github/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>github</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/C/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>C++</p></a></div>
 
 
         
@@ -557,7 +583,9 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/06/22/%E5%8D%9A%E5%AE%A2%E5%8A%9F%E8%83%BD%E7%9A%84%E4%BC%98%E5%8C%96/&title=hexo+github博客功能优化 - Zhenyu's Blog | 生活值得被记录.&summary=hexo博客的功能优化（6.22）花费一天的时间，优化了博客中可能出现的页面的功能，如404，about的页面的非渲染。"
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/06/27/C++%E5%9F%BA%E7%A1%80%E4%B8%8E%E6%8F%90%E9%AB%98Day2/&title=C++基础与提高：Day2 C++对C的Externsion - Zhenyu's Blog | 生活值得被记录.&summary=引用规则：
+引用没有定义，是一种关系型声明。声明它和原有的某一变量的关系。故而类型与原类型保持一致，且不分配内存。与被引用的变量有相同的地址。
+声明的时候必须初始化，一经声明，不可以更变。"
           
           >
           
@@ -569,7 +597,9 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/2020/06/22/%E5%8D%9A%E5%AE%A2%E5%8A%9F%E8%83%BD%E7%9A%84%E4%BC%98%E5%8C%96/&title=hexo+github博客功能优化 - Zhenyu's Blog | 生活值得被记录.&summary=hexo博客的功能优化（6.22）花费一天的时间，优化了博客中可能出现的页面的功能，如404，about的页面的非渲染。"
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/2020/06/27/C++%E5%9F%BA%E7%A1%80%E4%B8%8E%E6%8F%90%E9%AB%98Day2/&title=C++基础与提高：Day2 C++对C的Externsion - Zhenyu's Blog | 生活值得被记录.&summary=引用规则：
+引用没有定义，是一种关系型声明。声明它和原有的某一变量的关系。故而类型与原类型保持一致，且不分配内存。与被引用的变量有相同的地址。
+声明的时候必须初始化，一经声明，不可以更变。"
           
           >
           
@@ -581,7 +611,9 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/06/22/%E5%8D%9A%E5%AE%A2%E5%8A%9F%E8%83%BD%E7%9A%84%E4%BC%98%E5%8C%96/&title=hexo+github博客功能优化 - Zhenyu's Blog | 生活值得被记录.&summary=hexo博客的功能优化（6.22）花费一天的时间，优化了博客中可能出现的页面的功能，如404，about的页面的非渲染。"
+          href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/06/27/C++%E5%9F%BA%E7%A1%80%E4%B8%8E%E6%8F%90%E9%AB%98Day2/&title=C++基础与提高：Day2 C++对C的Externsion - Zhenyu's Blog | 生活值得被记录.&summary=引用规则：
+引用没有定义，是一种关系型声明。声明它和原有的某一变量的关系。故而类型与原类型保持一致，且不分配内存。与被引用的变量有相同的地址。
+声明的时候必须初始化，一经声明，不可以更变。"
           
           >
           
@@ -605,19 +637,13 @@
         
           <div class="prev-next">
             
-              <a class='prev' href='/2020/06/24/%E7%AE%97%E6%B3%95%E8%AF%BE%E7%A8%8B/'>
-                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>牛客算法：分治递归及C++中STL库</p>
-                <p class='content'>结合牛客算法课和c转c++教程，做出一些关于算法学习的总结。
-分治：基本思想：求解某些问题时，直接求解的过程相当复杂，往往先把它分解成几个子问题，找到求出子问题的解法后，找到合适方法组合，求整个...</p>
-              </a>
             
-            
-              <a class='next' href='/2020/06/15/c%20%E8%AF%AD%E8%A8%80%E7%94%A8%20scanf%20%E8%BF%9E%E7%BB%AD%E8%BE%93%E5%85%A5%E5%AD%97%E7%AC%A6%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/'>
-                <p class='title'>C用scanf连续输入字符型数据常见问题<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-                <p class='content'>C 用 scanf 连续输入字符型数据常见问题在设计数据结构实习过程中遇到，连续输入字符的问题。
+              <a class='next' href='/2020/06/26/C++%E5%9F%BA%E7%A1%80%E4%B8%8E%E6%8F%90%E9%AB%98Day1/'>
+                <p class='title'>C++基础与提高：Day1 C++对C的Externsion<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>类型增强类型检查严格在c中存在一个const类型的指针赋值给非const类的指针，并且可以顺利通过，但是在c++中是无法通过的。
 
 
-12345678910111213#include &lt;stdio.h&gt;#incl...</p>
+12345678int main()&#123;	const...</p>
               </a>
             
           </div>
@@ -671,7 +697,7 @@
 
   <script>
     window.subData = {
-      title: 'hexo+github博客功能优化',
+      title: 'C++基础与提高：Day2 C++对C的Externsion',
       tools: true
     }
   </script>
@@ -872,7 +898,7 @@
 
 
     <div class='content'>
-      
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#应用"><span class="toc-number">1.</span> <span class="toc-text">应用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#引用提高"><span class="toc-number">2.</span> <span class="toc-text">引用提高</span></a></li></ol>
     </div>
   </section>
 
