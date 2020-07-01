@@ -18,13 +18,18 @@
                                                 
                                                     <title>
                                                         
-                                                            dp算法学习：连续子数组的最大和 -
+                                                            dp算法学习：最大子段和及LIS,LCS -
                                                                 
                                                                     Zhenyu&#39;s Blog | 生活值得被记录.
                                                     </title>
                                                     
+                                                        <meta name="keywords" content="算法,C++">
+                                                        
                                                             
-                                                                <meta name="description" content="动态规划：dp作为经典算法之一，必须要花大量时间去好好掌握。">
+                                                                <meta name="description" content="最大子段和最大子段的概念：连续的一段子序列称为一个子段，子段中所有数的和称为子段和。
+例题： 
+下列数列最大子段和为多少
+-2，11，-4，13，-5，-2">
                                                                 
 
                                                                     <!-- feed -->
@@ -353,8 +358,8 @@
         
           
   <h1 class="title">
-    <a href="/2020/06/30/dp%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E8%BF%9E%E7%BB%AD%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%A4%A7%E5%92%8C/">
-      dp算法学习：连续子数组的最大和
+    <a href="/2020/07/01/dp%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E6%9C%80%E5%A4%A7%E5%AD%90%E6%AE%B5%E5%92%8C/">
+      dp算法学习：最大子段和及LIS,LCS
     </a>
   </h1>
 
@@ -392,7 +397,7 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Jun 30, 2020</p>
+    <p>发布于：Jul 1, 2020</p>
   </a>
 </div>
 
@@ -403,13 +408,13 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>391 words</p>
+      <p>1.4k words</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>1 min</p>
+      <p>6 min</p>
     </a>
   </div>
 
@@ -433,31 +438,197 @@
       <section class="article typo">
         <div class="article-entry" itemprop="articleBody">
           
-          <h1 id="动态规划："><a href="#动态规划：" class="headerlink" title="动态规划："></a>动态规划：</h1><p>dp作为经典算法之一，必须要花大量时间去好好掌握。</p>
+          <h1 id="最大子段和"><a href="#最大子段和" class="headerlink" title="最大子段和"></a>最大子段和</h1><p>最大子段的概念：连续的一段子序列称为一个子段，子段中所有数的和称为子段和。</p>
+<p><strong>例题</strong>： </p>
+<p>下列数列最大子段和为多少</p>
+<p>-2，11，-4，13，-5，-2</p>
 <a id="more"></a>
 
-<h2 id="典型例题："><a href="#典型例题：" class="headerlink" title="典型例题："></a>典型例题：</h2><p>输入一个整型数组，数组里有正数也有负数。数组中的一个或连续多个整数组成一个子数组。求所有子数组的和的最大值。</p>
-<p>要求时间复杂度为O(n)。</p>
-<h2 id="动态规划解析："><a href="#动态规划解析：" class="headerlink" title="动态规划解析："></a>动态规划解析：</h2><ul>
-<li><p><strong>状态定义</strong>：先设动态规划列表dp，dp[i]代表以元素nums[i]为结尾的连续子数组的最大和。</p>
+<h2 id="暴力方法"><a href="#暴力方法" class="headerlink" title="暴力方法"></a>暴力方法</h2><ol>
+<li>枚举两个端点，遍历所选出的子段求和。枚举端点复杂度为<strong>O(n²)</strong>，求一个子段的和，复杂度为<strong>O(n)</strong>，因此最终复杂度为<strong>O(n³)</strong></li>
+<li>求一个子段和可以预处理前缀和进行优化，将这一部分复杂度为<strong>O(1)</strong>，总时间复杂度降为<strong>O(n²)</strong></li>
+</ol>
+<h2 id="动态规划算法"><a href="#动态规划算法" class="headerlink" title="动态规划算法"></a>动态规划算法</h2><p><strong>分析：</strong></p>
 <ul>
-<li>最大和dp[i]中必须包含元素nums[i]:保证dp[i]递推到dp[i+1]的正确性，如果不包含nums[i]，递推时候就不满足连续<strong>子数组</strong>的要求。</li>
+<li>对于非正数的序列，其中的一个元素本身就是最大值。</li>
+<li>对于有正数的序列，考虑以每一个点为结尾的最大子段和，这个子段一定满足其前缀和为非负，因为如果一个前缀是负，那么减掉这个前缀一定对于这个点更优，并且这个子段要尽量向前延伸</li>
 </ul>
+<p><strong>实现：</strong></p>
+<ul>
+<li><p>可以用一次扫描，记录目前统计的sum及答案ans。 当sum加上当前位置数如果还是正数的话就进行累加sum，否则将sum置为0. 这样就可以舍去所有前缀为负数的情况，并且保证这个子段尽可能地长，每一次sum如果比ans大的话就更新ans，这样就得到了最大子段和。</p>
 </li>
-<li><p><strong>转移方程</strong>：如果dp[i-1]&lt;=0,说明dp[i-1]对dp[i]产生负贡献，即dp[i-1]+nums[i]的值不如nums[i]本身大。</p>
-<pre><code>- 当dp[i-1]&gt;0时：执行dp[i]=dp[i-1]+nums[i];
-- 当dp[i-1]&lt;=0时：执行dp[i]=nums[i];</code></pre></li>
-<li><p><strong>初始状态</strong>：dp[0]=nums[0],即以nums[0]结尾的连续子数组最大和为nums[0]</p>
-</li>
-<li><p><strong>返回值</strong>：返回dp列表中的最大值，代表全局最大值</p>
+<li><p>时间复杂度为O(n)</p>
 </li>
 </ul>
-<h2 id="过程图解："><a href="#过程图解：" class="headerlink" title="过程图解："></a>过程图解：</h2><p><a href="https://imgchr.com/i/NICB2d" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/06/30/NICB2d.md.png" alt="NICB2d.md.png"></a></p>
-<p><a href="https://imgchr.com/i/NICyrt" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/06/30/NICyrt.md.png" alt="NICyrt.md.png"></a></p>
-<p>[<img src="https://s1.ax1x.com/2020/06/30/NICDxA.md.png" alt="NICDxA.md.png"><br><a href="https://imgchr.com/i/NICsKI" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/06/30/NICsKI.md.png" alt="NICsKI.md.png"></a></p>
-<h2 id="leetcode提交代码："><a href="#leetcode提交代码：" class="headerlink" title="leetcode提交代码："></a>leetcode提交代码：</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*2020年6月30日 17:07:28*/</span></span><br><span class="line"><span class="comment">/*leetcode动态规划算法练习*/</span></span><br><span class="line"><span class="comment">/*剑指 Offer 42. 连续子数组的最大和*/</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>&#123;</span></span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		<span class="function"><span class="keyword">int</span> <span class="title">maxSubArray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span></span>&#123;</span><br><span class="line">			<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;dp(nums.<span class="built_in">size</span>(),nums[<span class="number">0</span>]);</span><br><span class="line">			<span class="keyword">int</span> ans=dp[<span class="number">0</span>];</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;nums.<span class="built_in">size</span>();i++)</span><br><span class="line">			&#123;</span><br><span class="line">				dp[i]=<span class="built_in">max</span>(dp[i<span class="number">-1</span>]+nums[i],nums[i]);</span><br><span class="line">				ans=<span class="built_in">max</span>(ans,dp[i]);	</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">return</span> ans;</span><br><span class="line">		&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><strong>代码：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*动态规划，最大子段和*/</span></span><br><span class="line"><span class="comment">/*2020年7月1日 07:23:31*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> inf =<span class="number">0x7ffffff</span>; <span class="comment">//无穷大</span></span><br><span class="line"><span class="keyword">int</span> num[<span class="number">10</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;num[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> ans= -inf; <span class="comment">//先标记ans为num数组中最大值,也就是负无穷。</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        ans=<span class="built_in">max</span>(ans,num[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(ans&lt;=<span class="number">0</span>)&#123; <span class="comment">//最大值小于0则输出</span></span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">int</span> sum=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(sum+num[i]&lt;<span class="number">0</span>)&#123; <span class="comment">//如果前缀和为负数，则将sum置为0，下一个元素本身就是最大</span></span><br><span class="line">                sum=<span class="number">0</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                sum +=num[i]; <span class="comment">//否则继续累加</span></span><br><span class="line">            &#125;</span><br><span class="line">            ans =<span class="built_in">max</span>(ans,sum);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
+
+<h1 id="最长上升子序列-LIS"><a href="#最长上升子序列-LIS" class="headerlink" title="最长上升子序列(LIS)"></a>最长上升子序列(LIS)</h1><p>在原序列取任意项，不改变原本的先后次序，得到原序列的子序列。最长子序列就是给定子序列中一个最长的、数值从低到高排序的子序列，同时最长子序列并不是唯一的。</p>
+<p><strong>例题</strong>：</p>
+<p>在序列5,2,7,9,4,5,7,10中最大上升子序列长度。</p>
+<p><strong>分析</strong>：</p>
+<ul>
+<li>用dp[i]作为一定以第i项结尾的最长上升子序列。用a[i]表示第i项的值，如果有j&lt;i且a[j]&lt;a[i]，那么把第i项接到第j项后面构成子序列长度为dp[i]=dp[j]+1</li>
+<li>要使dp[i]为以i结尾的最长上升子序列，需要枚举所有满足条件的j。所以状态转移方程为：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dp[i] &#x3D; max(dp[i] , dp[j]+1), 1&lt;&#x3D;j&lt;i &amp;&amp; a[j]&lt;a[i]</span><br></pre></td></tr></table></figure>
+
+
+
+
+<ul>
+<li>最后，dp数组中最大值就是最大上升子序列的长度</li>
+<li>时间复杂度O(n²)</li>
+</ul>
+<p>根据动态规划状态转移方程得到如下表格：<span class='p red'>（清晰明了，一看就懂！）</span></p>
+<table>
+<thead>
+<tr>
+<th align="center">i</th>
+<th align="center">1</th>
+<th align="center">2</th>
+<th align="center">3</th>
+<th align="center">4</th>
+<th align="center">5</th>
+<th align="center">6</th>
+<th align="center">7</th>
+<th align="center">8</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">a[i]</td>
+<td align="center">5</td>
+<td align="center">2</td>
+<td align="center">7</td>
+<td align="center">9</td>
+<td align="center">4</td>
+<td align="center">5</td>
+<td align="center">7</td>
+<td align="center">10</td>
+</tr>
+<tr>
+<td align="center">dp[i]</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">2</td>
+<td align="center">3</td>
+<td align="center">2</td>
+<td align="center">3</td>
+<td align="center">4</td>
+<td align="center">5</td>
+</tr>
+</tbody></table>
+<p><strong>代码</strong>：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*动态规划：最长上升子序列*/</span></span><br><span class="line"><span class="comment">/*2020年7月1日 07:53:44*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> dp[<span class="number">101</span>],a[<span class="number">101</span>],n;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">LIS</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        dp[i]=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;i;j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(a[j]&lt;a[i])&#123;</span><br><span class="line">                dp[i] = <span class="built_in">max</span>(dp[i],dp[j]+<span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        ans = <span class="built_in">max</span>(ans,dp[i]); <span class="comment">//ans记录当前位置的最大上升子序列</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;a[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;LIS()&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="最长公共子序列-LCS"><a href="#最长公共子序列-LCS" class="headerlink" title="最长公共子序列(LCS)"></a>最长公共子序列(LCS)</h1><p><strong>例题：</strong>最长公共子序列：给定两个序列<strong>S1</strong>和<strong>S2</strong>，求两者的公共子序列<strong>S3</strong>的最长的长度</p>
+<p><strong>分析</strong>：</p>
+<ul>
+<li><p>可以按照前面所学的，按照序列的长度来划分状态，也就是S1的前i个字符和S2的前j个字符的最长公共子序列长度，记为lcs [i] [j]</p>
+</li>
+<li><p>如果S1的第i项和S2的第j项相等，那么S1[i]和S2[j]作为公共子序列的末尾，则：</p>
+<div class="note "><p>lcs[i] [j] = lcs[i-1] [j-1] +1</p></div>
+</li>
+<li><p>也可以不让S1[i]和S2[j]作为公共子序列的末尾，则:</p>
+<p><strong>lcs[i] [j] = max(lcs[i] [j-1], lcs[i-1] [j])</strong></p>
+</li>
+</ul>
+<p><strong>动态转移方程：</strong></p>
+<p><img src="https://s1.ax1x.com/2020/07/01/Now9r4.png" alt="动态转移方程"></p>
+<p><strong>举例理解：</strong></p>
+<p>两个序列： <strong>S1=abcfbc</strong> ， <strong>S2=abfcab</strong> 根据状态方程可得如下表格：</p>
+<table>
+<thead>
+<tr>
+<th align="center">lcs</th>
+<th align="center">0</th>
+<th align="center">1(a)</th>
+<th align="center">2(b)</th>
+<th align="center">3(c)</th>
+<th align="center">4(f)</th>
+<th align="center">5(b)</th>
+<th align="center">6(c)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">1(a)</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">2(b)</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">2</td>
+<td align="center">2</td>
+<td align="center">2</td>
+<td align="center">2</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">3(f)</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">2</td>
+<td align="center">2</td>
+<td align="center">3</td>
+<td align="center">3</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">4(c)</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">2</td>
+<td align="center">3</td>
+<td align="center">3</td>
+<td align="center">3</td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td align="center">5(a)</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">2</td>
+<td align="center">3</td>
+<td align="center">3</td>
+<td align="center">3</td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td align="center">6(b)</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">2</td>
+<td align="center">3</td>
+<td align="center">3</td>
+<td align="center">4</td>
+<td align="center">4</td>
+</tr>
+</tbody></table>
+<p><strong>代码</strong>：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> dp[<span class="number">101</span>][<span class="number">101</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> a,b;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;a&gt;&gt;b;</span><br><span class="line">    <span class="keyword">int</span> lena=a.<span class="built_in">size</span>();</span><br><span class="line">    <span class="keyword">int</span> lenb=b.<span class="built_in">size</span>();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=lena;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=lenb;j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(a[i<span class="number">-1</span>]==b[j<span class="number">-1</span>])&#123;</span><br><span class="line">                dp[i][j]=dp[i<span class="number">-1</span>][j<span class="number">-1</span>]+<span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                dp[i][j]=<span class="built_in">max</span>(dp[i<span class="number">-1</span>][j],dp[i][j<span class="number">-1</span>]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;dp[lena][lenb]&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
           
@@ -547,10 +718,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-30T17:07:32+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-07-01T08:35:24+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Jun 30, 2020</p>
+    <p>更新于：Jul 1, 2020</p>
   </a>
 </div>
 
@@ -558,6 +729,9 @@
       
         
           
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E7%AE%97%E6%B3%95/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>算法</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/C/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>C++</p></a></div>
+
 
         
       
@@ -574,7 +748,10 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/06/30/dp%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E8%BF%9E%E7%BB%AD%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%A4%A7%E5%92%8C/&title=dp算法学习：连续子数组的最大和 - Zhenyu's Blog | 生活值得被记录.&summary=动态规划：dp作为经典算法之一，必须要花大量时间去好好掌握。"
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/07/01/dp%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E6%9C%80%E5%A4%A7%E5%AD%90%E6%AE%B5%E5%92%8C/&title=dp算法学习：最大子段和及LIS,LCS - Zhenyu's Blog | 生活值得被记录.&summary=最大子段和最大子段的概念：连续的一段子序列称为一个子段，子段中所有数的和称为子段和。
+例题： 
+下列数列最大子段和为多少
+-2，11，-4，13，-5，-2"
           
           >
           
@@ -586,7 +763,10 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/2020/06/30/dp%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E8%BF%9E%E7%BB%AD%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%A4%A7%E5%92%8C/&title=dp算法学习：连续子数组的最大和 - Zhenyu's Blog | 生活值得被记录.&summary=动态规划：dp作为经典算法之一，必须要花大量时间去好好掌握。"
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/2020/07/01/dp%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E6%9C%80%E5%A4%A7%E5%AD%90%E6%AE%B5%E5%92%8C/&title=dp算法学习：最大子段和及LIS,LCS - Zhenyu's Blog | 生活值得被记录.&summary=最大子段和最大子段的概念：连续的一段子序列称为一个子段，子段中所有数的和称为子段和。
+例题： 
+下列数列最大子段和为多少
+-2，11，-4，13，-5，-2"
           
           >
           
@@ -598,7 +778,10 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/06/30/dp%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E8%BF%9E%E7%BB%AD%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%A4%A7%E5%92%8C/&title=dp算法学习：连续子数组的最大和 - Zhenyu's Blog | 生活值得被记录.&summary=动态规划：dp作为经典算法之一，必须要花大量时间去好好掌握。"
+          href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/07/01/dp%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E6%9C%80%E5%A4%A7%E5%AD%90%E6%AE%B5%E5%92%8C/&title=dp算法学习：最大子段和及LIS,LCS - Zhenyu's Blog | 生活值得被记录.&summary=最大子段和最大子段的概念：连续的一段子序列称为一个子段，子段中所有数的和称为子段和。
+例题： 
+下列数列最大子段和为多少
+-2，11，-4，13，-5，-2"
           
           >
           
@@ -622,25 +805,14 @@
         
           <div class="prev-next">
             
-              <a class='prev' href='/2020/07/01/dp%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E6%9C%80%E5%A4%A7%E5%AD%90%E6%AE%B5%E5%92%8C/'>
-                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>dp算法学习：最大子段和及LIS,LCS</p>
-                <p class='content'>最大子段和最大子段的概念：连续的一段子序列称为一个子段，子段中所有数的和称为子段和。
-例题： 
-下列数列最大子段和为多少
--2，11，-4，13，-5，-2
-
-
-暴力方法
-枚举两个端点，遍历所选...</p>
-              </a>
             
-            
-              <a class='next' href='/2020/06/30/6%E6%9C%88%E6%80%BB%E7%BB%93/'>
-                <p class='title'>2020年6月总结<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-                <p class='content'>6月份应该来说是1月至今最忙碌的一个月。
+              <a class='next' href='/2020/06/30/dp%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E8%BF%9E%E7%BB%AD%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%A4%A7%E5%92%8C/'>
+                <p class='title'>dp算法学习：连续子数组的最大和<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>动态规划：dp作为经典算法之一，必须要花大量时间去好好掌握。
 
 
-总结：驾考​       6月1日开始去练科二，6月10日科二过关，6月11日开始练科三，6月18日科目三过关，6月29日过关科目四，当场拿驾驶证。...</p>
+典型例题：输入一个整型数组，数组里有正数也有负数。数组中的一个或连续多个整数组成一个子数组。求所有子数组的和的最大值。
+要求时间...</p>
               </a>
             
           </div>
@@ -694,7 +866,7 @@
 
   <script>
     window.subData = {
-      title: 'dp算法学习：连续子数组的最大和',
+      title: 'dp算法学习：最大子段和及LIS,LCS',
       tools: true
     }
   </script>
@@ -885,7 +1057,7 @@
 
 
     <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#典型例题："><span class="toc-number">1.</span> <span class="toc-text">典型例题：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#动态规划解析："><span class="toc-number">2.</span> <span class="toc-text">动态规划解析：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#过程图解："><span class="toc-number">3.</span> <span class="toc-text">过程图解：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#leetcode提交代码："><span class="toc-number">4.</span> <span class="toc-text">leetcode提交代码：</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#暴力方法"><span class="toc-number">1.</span> <span class="toc-text">暴力方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#动态规划算法"><span class="toc-number">2.</span> <span class="toc-text">动态规划算法</span></a></li></ol>
     </div>
   </section>
 
