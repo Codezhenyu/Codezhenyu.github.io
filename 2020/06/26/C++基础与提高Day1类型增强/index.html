@@ -18,16 +18,15 @@
                                                 
                                                     <title>
                                                         
-                                                            驾考科目二要点(已过) -
+                                                            C++基础与提高：Day1 C++对C的Externsion -
                                                                 
                                                                     Zhenyu&#39;s Blog | 生活值得被记录.
                                                     </title>
                                                     
-                                                        <meta name="keywords" content="驾考">
+                                                        <meta name="keywords" content="C++">
                                                         
                                                             
-                                                                <meta name="description" content="[toc]
-原来二月份要考的科目二，好久没练车，忘得一干二净……别躺了，6月份开始继续练车。">
+                                                                <meta name="description" content="类型增强类型检查严格在c中存在一个const类型的指针赋值给非const类的指针，并且可以顺利通过，但是在c++中是无法通过的。">
                                                                 
 
                                                                     <!-- feed -->
@@ -356,8 +355,8 @@
         
           
   <h1 class="title">
-    <a href="/2020/05/31/%E9%A9%BE%E8%80%83%E7%A7%91%E7%9B%AE%E4%BA%8C%E8%A6%81%E7%82%B9/">
-      驾考科目二要点(已过)
+    <a href="/2020/06/26/C++%E5%9F%BA%E7%A1%80%E4%B8%8E%E6%8F%90%E9%AB%98Day1%E7%B1%BB%E5%9E%8B%E5%A2%9E%E5%BC%BA/">
+      C++基础与提高：Day1 C++对C的Externsion
     </a>
   </h1>
 
@@ -382,9 +381,9 @@
               
   
   <div class='new-meta-item category'>
-    <a href='/categories/%E8%80%83%E8%AF%81/' rel="nofollow">
+    <a href='/categories/C-%E5%9F%BA%E7%A1%80/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>考证</p>
+      <p>C++基础</p>
     </a>
   </div>
 
@@ -395,7 +394,7 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：May 31, 2020</p>
+    <p>发布于：Jun 26, 2020</p>
   </a>
 </div>
 
@@ -406,13 +405,13 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>361 words</p>
+      <p>1.3k words</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>1 min</p>
+      <p>6 min</p>
     </a>
   </div>
 
@@ -436,62 +435,73 @@
       <section class="article typo">
         <div class="article-entry" itemprop="articleBody">
           
-          <p>[toc]</p>
-<p>原来二月份要考的科目二，好久没练车，忘得一干二净……别躺了，6月份开始继续练车。</p>
+          <h1 id="类型增强"><a href="#类型增强" class="headerlink" title="类型增强"></a>类型增强</h1><h2 id="类型检查严格"><a href="#类型检查严格" class="headerlink" title="类型检查严格"></a>类型检查严格</h2><p>在c中存在一个const类型的指针赋值给非const类的指针，并且可以顺利通过，但是在c++中是无法通过的。</p>
 <a id="more"></a>
 
-<p><a href=""><img src="https://s1.ax1x.com/2020/06/01/t8QdUK.md.jpg" alt="t8QdUK.md.jpg"></a></p>
-<h1 id="考前准备："><a href="#考前准备：" class="headerlink" title="考前准备："></a>考前准备：</h1><ol>
-<li>调整座椅，离合器踩到底</li>
-<li>后视镜调整：左边能看到后轮（后视镜1/3） 右边压在后门把手 看到</li>
-<li>安全带系好，确保不会弹出</li>
-<li>检查仪表板</li>
-<li><span class='p green'>拉手刹测试</span>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">const</span> <span class="keyword">int</span> a=<span class="number">100</span>;</span><br><span class="line">	<span class="keyword">int</span> b=a;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">const</span> <span class="keyword">int</span> *pa=&amp;a;</span><br><span class="line">	<span class="keyword">int</span> *pb =pa;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h2 id="布尔类型"><a href="#布尔类型" class="headerlink" title="布尔类型"></a>布尔类型</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">bool</span> flag=<span class="literal">true</span>;</span><br><span class="line">	<span class="keyword">if</span>(flag!=<span class="literal">false</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"i know bool type now\n"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"bool size=%d\n"</span>,<span class="keyword">sizeof</span>(<span class="keyword">bool</span>));</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h2 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h2><p>c中枚举本质就是整型，枚举变量可以用任意整型赋值，但是c++中枚举变量，只能用被枚举出来的元素进行初始化。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//error</span></span><br><span class="line"><span class="keyword">enum</span> season&#123;SPR,SUM,AUT,WIN&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">enum</span> season s=SPR；</span><br><span class="line">	s=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-</li>
+<h2 id="表达式的值可以被赋值"><a href="#表达式的值可以被赋值" class="headerlink" title="表达式的值可以被赋值"></a>表达式的值可以被赋值</h2><p>c++中表达式是可以赋值的。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a,b=<span class="number">5</span>;</span><br><span class="line">	(a=b)=<span class="number">10</span>;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"a = "</span>&lt;&lt;a&lt;&lt;<span class="string">"b = "</span>&lt;&lt;b&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	(a&lt;b?a:b)=<span class="number">200</span>;</span><br><span class="line">	<span class="built_in">cout</span>&lt;<span class="string">"a="</span>&lt;&lt;a&lt;&lt;<span class="string">"b = "</span>&lt;&lt;b&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="标准的输入输出"><a href="#标准的输入输出" class="headerlink" title="标准的输入输出"></a>标准的输入输出</h1><h2 id="设置域宽及位数"><a href="#设置域宽及位数" class="headerlink" title="设置域宽及位数"></a>设置域宽及位数</h2><p>对于实型，cout默认输出六位有效数据，setprecision(2)可以设置有效位数，setprecision(n)&lt;&lt;setiosflags(ios::fixed)合用，可以设置小数点右边的位数。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%c \n%d\n%f\n"</span>,<span class="string">'a'</span>,<span class="number">100</span>,<span class="number">120.00</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%5c\n%5d\n%6.2f\n"</span>,<span class="string">'a'</span>,<span class="number">100</span>,<span class="number">120.00</span>);</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;setw(<span class="number">5</span>)&lt;&lt;<span class="string">'a'</span>&lt;&lt;<span class="built_in">endl</span>&lt;&lt;setw(<span class="number">5</span>)&lt;&lt;<span class="number">100</span>&lt;&lt;<span class="built_in">endl</span>&lt;&lt;setprecision(<span class="number">2</span>)&lt;&lt;setiosflags(ios::fixed)&lt;&lt;<span class="number">120.00</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="按进制输出"><a href="#按进制输出" class="headerlink" title="按进制输出"></a>按进制输出</h2><p>输出十进制，十六进制，八进制。默认输出十进制的数据。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i=<span class="number">123</span>;</span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;i&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;dec&lt;&lt;i&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;hex&lt;&lt;i&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;oct&lt;&lt;i&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;setbase(<span class="number">6</span>)&lt;&lt;i&lt;&lt;<span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="设置填充符"><a href="#设置填充符" class="headerlink" title="设置填充符"></a>设置填充符</h2><p>还可以设置域宽的同时，设置左右对齐及填充字符。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;setw(<span class="number">10</span>)&lt;&lt;<span class="number">1234</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;setw(<span class="number">10</span>)&lt;&lt;setfill(<span class="string">'0'</span>)&lt;&lt;<span class="number">1234</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;setw(<span class="number">10</span>)&lt;&lt;setfill(<span class="string">'0'</span>)&lt;&lt;setiosflags(ios::left)&lt;&lt;<span class="number">1234</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;setw(<span class="number">10</span>)&lt;&lt;setfill(<span class="string">'-'</span>)&lt;&lt;setiosflags(ios::right)&lt;&lt;<span class="number">1234</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="函数重载"><a href="#函数重载" class="headerlink" title="函数重载"></a>函数重载</h1><p>c++致力于简化编程，能够通过函数重名来达到简化编程的目的。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">abs</span><span class="params">(<span class="keyword">int</span> a)</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a&gt;<span class="number">0</span>? a:-a;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">abs</span><span class="params">(<span class="keyword">double</span> a)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a&gt;<span class="number">0</span>?a:-a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="重载规则与调用匹配"><a href="#重载规则与调用匹配" class="headerlink" title="重载规则与调用匹配"></a>重载规则与调用匹配</h2><p>重载规则：</p>
+<ol>
+<li>函数名相同。</li>
+<li>参数个数不同，参数类型不同，参数顺序不同，均可构成重载。</li>
+<li>返回值类型不同则不可以构成重载。</li>
 </ol>
-<h1 id="倒车入库："><a href="#倒车入库：" class="headerlink" title="倒车入库："></a>倒车入库：</h1><ol>
-<li>保持1.5米边距的方法：<span class='p blue'>左后视镜下沿一半的位置贴着线</span></li>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">int</span> a)</span></span>; <span class="comment">//OK</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">char</span> a)</span></span>; <span class="comment">//OK</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">char</span> a,<span class="keyword">int</span> b)</span></span>; <span class="comment">//OK</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">char</span> b)</span></span>; <span class="comment">//OK</span></span><br><span class="line"><span class="function"><span class="keyword">char</span> <span class="title">func</span><span class="params">(<span class="keyword">int</span> a)</span></span>; <span class="comment">//与第一个函数有冲突</span></span><br></pre></td></tr></table></figure>
+
+<p>★匹配原则：</p>
+<ol>
+<li>严格匹配，找到则调用。</li>
+<li>通过隐式转换寻求一个匹配，找到则调用。</li>
 </ol>
-<h1 id="曲线行驶："><a href="#曲线行驶：" class="headerlink" title="曲线行驶："></a>曲线行驶：</h1><ol>
-<li><span class='p red'>打一圈</span>方向，左车角碰线回正，到右边角再打一圈方向，要出口时候<span class='p red'>稍微往左边回一些方向</span>。
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(<span class="keyword">double</span> a)</span></span>&#123;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;a&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(<span class="keyword">int</span> a)</span></span>&#123;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;a&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">print</span>(<span class="number">1</span>); <span class="comment">//print(int)</span></span><br><span class="line">	<span class="built_in">print</span>(<span class="number">1</span>,<span class="number">1</span>); <span class="comment">//print(double)</span></span><br><span class="line">	<span class="built_in">print</span>(<span class="string">'a'</span>); <span class="comment">//print(int)</span></span><br><span class="line">	<span class="built_in">print</span>(<span class="number">1.11f</span>);<span class="comment">//print(double)</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-</li>
+<p>注意：</p>
+<p>c++允许int到long和double，double到int和float隐式类型转换。</p>
+<p>解决方法是在调用的时候就进行强转。</p>
+<h2 id="重载底层实现"><a href="#重载底层实现" class="headerlink" title="重载底层实现"></a>重载底层实现</h2><h3 id="extern-“C”"><a href="#extern-“C”" class="headerlink" title="extern “C”"></a>extern “C”</h3><p>name mangling 发生在两个阶段，.cpp编译阶段，和.h的声明阶段。</p>
+<p>只有两个阶段同时进行，才能匹配调用。</p>
+<p>c++完全兼容c语言，也就意味着完全兼容c的类库，由于.c文件的类库文件中函数名并没有发生name mangling行为，而我们在包含.c文件所对应的.h文件时，.h文件要发生name manling行为，因而会发生在链接的时候的错误。</p>
+<p>c++为了避免上述的错误发生，重载了关键字extern。只需要在避免name manling的函数前，加上extern “C”</p>
+<h2 id="操作符重载"><a href="#操作符重载" class="headerlink" title="操作符重载"></a>操作符重载</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">COMP</span>&#123;</span></span><br><span class="line"><span class="keyword">float</span> real;</span><br><span class="line"><span class="keyword">float</span> <span class="built_in">image</span>;</span><br><span class="line">&#125;;</span><br><span class="line">COMP <span class="keyword">operator</span>+(COMP one,COMP another)</span><br><span class="line">&#123;</span><br><span class="line">	one.real+ =another.real;</span><br><span class="line">	one.<span class="built_in">image</span>+ =another.<span class="built_in">image</span>;</span><br><span class="line">	<span class="keyword">return</span> one;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	COMP c1=&#123;<span class="number">1</span>,<span class="number">2</span>&#125;;</span><br><span class="line">	COMP c2=&#123;<span class="number">3</span>,<span class="number">4</span>&#125;;</span><br><span class="line">	COMP sum =<span class="keyword">operator</span>+(c1,c2); <span class="comment">//c1+c2;</span></span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;sum.real&lt;&lt;<span class="string">" "</span>&lt;&lt;sum.<span class="built_in">image</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="默认参数"><a href="#默认参数" class="headerlink" title="默认参数"></a>默认参数</h2><p>通常情况下，函数在调用时，形参从实参那里取得值。对于多次调用函数同一个实参时，C++给出了更简单的处理办法。给形参以默认值，不用再从实参取值了。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;ctime&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">weatherForcast</span><span class="params">(<span class="keyword">char</span> *w=<span class="string">"sunny"</span>)</span> <span class="comment">//给出默认值</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">time_t</span> t=time(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">volume</span><span class="params">(<span class="keyword">float</span> length,<span class="keyword">float</span> weight=<span class="number">4</span>,<span class="keyword">float</span> high=<span class="number">5</span>)</span> <span class="comment">//从右往左，不能跳跃</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> length*weight*high;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">float</span> v=volume(<span class="number">10</span>);</span><br><span class="line">	<span class="keyword">float</span> v1=volume(<span class="number">10</span>,<span class="number">20</span>);</span><br><span class="line">	<span class="keyword">float</span> v2=volume(<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>);</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;v&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;v1&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;v2&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<ol>
+<li>默认从右往左，并且其中不能跳跃。</li>
+<li>函数声明和定义一体时，默认参数在定义处。声明在前，定义在后，默认参数在声明处。</li>
+<li>一个函数不能既作为重载，又作为默认参数的函数。当少写一个参数时，系统无法确认是重载还是默认参数。</li>
 </ol>
-<h1 id="侧方位停车："><a href="#侧方位停车：" class="headerlink" title="侧方位停车："></a>侧方位停车：</h1><ol>
-<li>出库时候 先打左灯 车头一般盖线一般后回正，慢慢打一圈。</li>
-<li>右边1/3盖到线大概是<span class='p yellow'>30公分！</span></li>
-</ol>
-<h1 id="直角转弯："><a href="#直角转弯：" class="headerlink" title="直角转弯："></a>直角转弯：</h1><ol>
-<li>左侧雨刮器最高点贴右边线行驶 30公分 左门把手对齐直角。</li>
-</ol>
-<h1 id="坡道定点起步："><a href="#坡道定点起步：" class="headerlink" title="坡道定点起步："></a>坡道定点起步：</h1><ol>
-<li>顶点记得挂空挡。</li>
-<li>左后视镜下沿要对齐第二根实线。</li>
-</ol>
-<hr>
-<div class="note "><p>大一暑假练车计划：</p></div>
-
-<div class='checkbox blue checked'><input type="checkbox" checked="checked"/>
-            <p>六月一日开始练车。</p>
-            </div>
-
-<div class='checkbox green'><input type="checkbox" />
-            <p>暑假至少考完科目二，练熟科目三。</p>
-            </div>
-
-<div class='checkbox plus red checked'><input type="checkbox" checked="checked"/>
-            <p>变黑警告</p>
-            </div>
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">         echo <span class="string">"这是一个日后生活的基本技能"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    fun();</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(<span class="keyword">int</span> a)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b=<span class="number">10</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">print</span>(<span class="number">110</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
-<h4 id="六月一日："><a href="#六月一日：" class="headerlink" title="六月一日："></a>六月一日：</h4><p>​    今天刚去第一天，预约10号考试，简单练了一下全程，<span class='p red'>坡道定点和曲线行驶点位看不见</span>。这天气是真热！</p>
-<p><a href="https://imgchr.com/i/t8QvPU" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/06/01/t8QvPU.md.jpg" alt="t8QvPU.md.jpg"></a></p>
+
+
 
           
             <div class='article_footer'>
@@ -580,10 +590,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-22T21:38:03+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-07-02T15:21:42+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Jun 22, 2020</p>
+    <p>更新于：Jul 2, 2020</p>
   </a>
 </div>
 
@@ -592,7 +602,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E9%A9%BE%E8%80%83/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>驾考</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/C/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>C++</p></a></div>
 
 
         
@@ -610,8 +620,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/05/31/%E9%A9%BE%E8%80%83%E7%A7%91%E7%9B%AE%E4%BA%8C%E8%A6%81%E7%82%B9/&title=驾考科目二要点(已过) - Zhenyu's Blog | 生活值得被记录.&summary=[toc]
-原来二月份要考的科目二，好久没练车，忘得一干二净……别躺了，6月份开始继续练车。"
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/06/26/C++%E5%9F%BA%E7%A1%80%E4%B8%8E%E6%8F%90%E9%AB%98Day1%E7%B1%BB%E5%9E%8B%E5%A2%9E%E5%BC%BA/&title=C++基础与提高：Day1 C++对C的Externsion - Zhenyu's Blog | 生活值得被记录.&summary=类型增强类型检查严格在c中存在一个const类型的指针赋值给非const类的指针，并且可以顺利通过，但是在c++中是无法通过的。"
           
           >
           
@@ -623,8 +632,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/2020/05/31/%E9%A9%BE%E8%80%83%E7%A7%91%E7%9B%AE%E4%BA%8C%E8%A6%81%E7%82%B9/&title=驾考科目二要点(已过) - Zhenyu's Blog | 生活值得被记录.&summary=[toc]
-原来二月份要考的科目二，好久没练车，忘得一干二净……别躺了，6月份开始继续练车。"
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/2020/06/26/C++%E5%9F%BA%E7%A1%80%E4%B8%8E%E6%8F%90%E9%AB%98Day1%E7%B1%BB%E5%9E%8B%E5%A2%9E%E5%BC%BA/&title=C++基础与提高：Day1 C++对C的Externsion - Zhenyu's Blog | 生活值得被记录.&summary=类型增强类型检查严格在c中存在一个const类型的指针赋值给非const类的指针，并且可以顺利通过，但是在c++中是无法通过的。"
           
           >
           
@@ -636,8 +644,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/05/31/%E9%A9%BE%E8%80%83%E7%A7%91%E7%9B%AE%E4%BA%8C%E8%A6%81%E7%82%B9/&title=驾考科目二要点(已过) - Zhenyu's Blog | 生活值得被记录.&summary=[toc]
-原来二月份要考的科目二，好久没练车，忘得一干二净……别躺了，6月份开始继续练车。"
+          href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/06/26/C++%E5%9F%BA%E7%A1%80%E4%B8%8E%E6%8F%90%E9%AB%98Day1%E7%B1%BB%E5%9E%8B%E5%A2%9E%E5%BC%BA/&title=C++基础与提高：Day1 C++对C的Externsion - Zhenyu's Blog | 生活值得被记录.&summary=类型增强类型检查严格在c中存在一个const类型的指针赋值给非const类的指针，并且可以顺利通过，但是在c++中是无法通过的。"
           
           >
           
@@ -661,26 +668,21 @@
         
           <div class="prev-next">
             
-              <a class='prev' href='/2020/06/10/%E7%A7%91%E4%B8%89%E8%A6%81%E7%82%B9/'>
-                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>驾考科目三要点(已过)</p>
-                <p class='content'>​    科目二10号下午过关，考试过程备受煎熬！！
-​    现在认真准备18号的科三考试，暑假争取拿驾照！！！
-18号科目三已过关，29号科四，6月底拿驾照！
+              <a class='prev' href='/2020/06/27/C++%E5%9F%BA%E7%A1%80%E4%B8%8E%E6%8F%90%E9%AB%98Day2%E5%BC%95%E7%94%A8/'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>C++基础与提高：Day2 引用</p>
+                <p class='content'>引用规则：
+引用没有定义，是一种关系型声明。声明它和原有的某一变量的关系。故而类型与原类型保持一致，且不分配内存。与被引用的变量有相同的地址。
+声明的时候必须初始化，一经声明，不可以更变。
 
 
-
-科三灯光口诀 直行跟车有...</p>
+...</p>
               </a>
             
             
-              <a class='next' href='/2020/05/31/Github-hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/'>
-                <p class='title'>Github+hexo博客搭建<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-                <p class='content'>hexo静态博客搭建
-
-
-耗费一晚上加一天时间算是搭建好了hexo博客，过程中也遇到很多问题。好在有CSDN的大佬们的文章帮忙。希望能够持续更新博客哦！
-
-</p>
+              <a class='next' href='/2020/06/24/%E7%AE%97%E6%B3%95%E8%AF%BE%E7%A8%8B/'>
+                <p class='title'>牛客算法：分治递归及C++中STL库<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>结合牛客算法课和c转c++教程，做出一些关于算法学习的总结。
+分治：基本思想：求解某些问题时，直接求解的过程相当复杂，往往先把它分解成几个子问题，找到求出子问题的解法后，找到合适方法组合，求整个...</p>
               </a>
             
           </div>
@@ -734,7 +736,7 @@
 
   <script>
     window.subData = {
-      title: '驾考科目二要点(已过)',
+      title: 'C++基础与提高：Day1 C++对C的Externsion',
       tools: true
     }
   </script>
@@ -925,7 +927,7 @@
 
 
     <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#六月一日："><span class="toc-number">1.</span> <span class="toc-text">六月一日：</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#类型检查严格"><span class="toc-number">1.</span> <span class="toc-text">类型检查严格</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#布尔类型"><span class="toc-number">2.</span> <span class="toc-text">布尔类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#枚举"><span class="toc-number">3.</span> <span class="toc-text">枚举</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#表达式的值可以被赋值"><span class="toc-number">4.</span> <span class="toc-text">表达式的值可以被赋值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设置域宽及位数"><span class="toc-number">5.</span> <span class="toc-text">设置域宽及位数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#按进制输出"><span class="toc-number">6.</span> <span class="toc-text">按进制输出</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设置填充符"><span class="toc-number">7.</span> <span class="toc-text">设置填充符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重载规则与调用匹配"><span class="toc-number">8.</span> <span class="toc-text">重载规则与调用匹配</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重载底层实现"><span class="toc-number">9.</span> <span class="toc-text">重载底层实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#extern-“C”"><span class="toc-number">9.1.</span> <span class="toc-text">extern “C”</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#操作符重载"><span class="toc-number">10.</span> <span class="toc-text">操作符重载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#默认参数"><span class="toc-number">11.</span> <span class="toc-text">默认参数</span></a></li></ol>
     </div>
   </section>
 

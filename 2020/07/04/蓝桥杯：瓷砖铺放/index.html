@@ -18,16 +18,15 @@
                                                 
                                                     <title>
                                                         
-                                                            驾考科目二要点(已过) -
+                                                            蓝桥杯：瓷砖铺放 -
                                                                 
                                                                     Zhenyu&#39;s Blog | 生活值得被记录.
                                                     </title>
                                                     
-                                                        <meta name="keywords" content="驾考">
+                                                        <meta name="keywords" content="递归">
                                                         
                                                             
-                                                                <meta name="description" content="[toc]
-原来二月份要考的科目二，好久没练车，忘得一干二净……别躺了，6月份开始继续练车。">
+                                                                <meta name="description" content="蓝桥杯 算法训练">
                                                                 
 
                                                                     <!-- feed -->
@@ -356,8 +355,8 @@
         
           
   <h1 class="title">
-    <a href="/2020/05/31/%E9%A9%BE%E8%80%83%E7%A7%91%E7%9B%AE%E4%BA%8C%E8%A6%81%E7%82%B9/">
-      驾考科目二要点(已过)
+    <a href="/2020/07/04/%E8%93%9D%E6%A1%A5%E6%9D%AF%EF%BC%9A%E7%93%B7%E7%A0%96%E9%93%BA%E6%94%BE/">
+      蓝桥杯：瓷砖铺放
     </a>
   </h1>
 
@@ -382,9 +381,9 @@
               
   
   <div class='new-meta-item category'>
-    <a href='/categories/%E8%80%83%E8%AF%81/' rel="nofollow">
+    <a href='/categories/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>考证</p>
+      <p>算法入门</p>
     </a>
   </div>
 
@@ -395,7 +394,7 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：May 31, 2020</p>
+    <p>发布于：Jul 4, 2020</p>
   </a>
 </div>
 
@@ -406,7 +405,7 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>361 words</p>
+      <p>249 words</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -436,62 +435,19 @@
       <section class="article typo">
         <div class="article-entry" itemprop="articleBody">
           
-          <p>[toc]</p>
-<p>原来二月份要考的科目二，好久没练车，忘得一干二净……别躺了，6月份开始继续练车。</p>
-<a id="more"></a>
+          <h1 id="蓝桥杯-算法训练"><a href="#蓝桥杯-算法训练" class="headerlink" title="蓝桥杯 算法训练"></a>蓝桥杯 算法训练</h1><a id="more"></a>
 
-<p><a href=""><img src="https://s1.ax1x.com/2020/06/01/t8QdUK.md.jpg" alt="t8QdUK.md.jpg"></a></p>
-<h1 id="考前准备："><a href="#考前准备：" class="headerlink" title="考前准备："></a>考前准备：</h1><ol>
-<li>调整座椅，离合器踩到底</li>
-<li>后视镜调整：左边能看到后轮（后视镜1/3） 右边压在后门把手 看到</li>
-<li>安全带系好，确保不会弹出</li>
-<li>检查仪表板</li>
-<li><span class='p green'>拉手刹测试</span>
+<p><strong>问题描述</strong></p>
+<p>　　有一长度为N(1&lt;=Ｎ&lt;=10)的地板，给定两种不同瓷砖：一种长度为1，另一种长度为2，数目不限。要将这个长度为N的地板铺满，一共有多少种不同的铺法？<br>　　例如，长度为4的地面一共有如下5种铺法：<br>　　4=1+1+1+1<br>　　4=2+1+1<br>　　4=1+2+1<br>　　4=1+1+2<br>　　4=2+2<br>　　编程用递归的方法求解上述问题。</p>
+<p><strong>输入格式</strong></p>
+<p>　　只有一个数N，代表地板的长度</p>
+<p><strong>输出格式</strong></p>
+<p>　　输出一个数，代表所有不同的瓷砖铺放方法的总数</p>
+<p><strong>过程：</strong>依次找到递归的规律，此题并不是dp！！！</p>
+<p><strong>代码：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*蓝桥杯 算法训练 瓷砖铺放*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">f</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(n==<span class="number">1</span>||n==<span class="number">2</span>)</span><br><span class="line">			<span class="keyword">return</span> n;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="keyword">return</span> f(n<span class="number">-1</span>)+f(n<span class="number">-2</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;f(n)&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-
-
-</li>
-</ol>
-<h1 id="倒车入库："><a href="#倒车入库：" class="headerlink" title="倒车入库："></a>倒车入库：</h1><ol>
-<li>保持1.5米边距的方法：<span class='p blue'>左后视镜下沿一半的位置贴着线</span></li>
-</ol>
-<h1 id="曲线行驶："><a href="#曲线行驶：" class="headerlink" title="曲线行驶："></a>曲线行驶：</h1><ol>
-<li><span class='p red'>打一圈</span>方向，左车角碰线回正，到右边角再打一圈方向，要出口时候<span class='p red'>稍微往左边回一些方向</span>。
-
-</li>
-</ol>
-<h1 id="侧方位停车："><a href="#侧方位停车：" class="headerlink" title="侧方位停车："></a>侧方位停车：</h1><ol>
-<li>出库时候 先打左灯 车头一般盖线一般后回正，慢慢打一圈。</li>
-<li>右边1/3盖到线大概是<span class='p yellow'>30公分！</span></li>
-</ol>
-<h1 id="直角转弯："><a href="#直角转弯：" class="headerlink" title="直角转弯："></a>直角转弯：</h1><ol>
-<li>左侧雨刮器最高点贴右边线行驶 30公分 左门把手对齐直角。</li>
-</ol>
-<h1 id="坡道定点起步："><a href="#坡道定点起步：" class="headerlink" title="坡道定点起步："></a>坡道定点起步：</h1><ol>
-<li>顶点记得挂空挡。</li>
-<li>左后视镜下沿要对齐第二根实线。</li>
-</ol>
-<hr>
-<div class="note "><p>大一暑假练车计划：</p></div>
-
-<div class='checkbox blue checked'><input type="checkbox" checked="checked"/>
-            <p>六月一日开始练车。</p>
-            </div>
-
-<div class='checkbox green'><input type="checkbox" />
-            <p>暑假至少考完科目二，练熟科目三。</p>
-            </div>
-
-<div class='checkbox plus red checked'><input type="checkbox" checked="checked"/>
-            <p>变黑警告</p>
-            </div>
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">         echo <span class="string">"这是一个日后生活的基本技能"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    fun();</span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="六月一日："><a href="#六月一日：" class="headerlink" title="六月一日："></a>六月一日：</h4><p>​    今天刚去第一天，预约10号考试，简单练了一下全程，<span class='p red'>坡道定点和曲线行驶点位看不见</span>。这天气是真热！</p>
-<p><a href="https://imgchr.com/i/t8QvPU" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/06/01/t8QvPU.md.jpg" alt="t8QvPU.md.jpg"></a></p>
+<p><img src="https://s1.ax1x.com/2020/07/04/Nxp17F.md.png" alt=""></p>
 
           
             <div class='article_footer'>
@@ -580,10 +536,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-22T21:38:03+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-07-04T12:50:43+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Jun 22, 2020</p>
+    <p>更新于：Jul 4, 2020</p>
   </a>
 </div>
 
@@ -592,7 +548,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E9%A9%BE%E8%80%83/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>驾考</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E9%80%92%E5%BD%92/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>递归</p></a></div>
 
 
         
@@ -610,8 +566,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/05/31/%E9%A9%BE%E8%80%83%E7%A7%91%E7%9B%AE%E4%BA%8C%E8%A6%81%E7%82%B9/&title=驾考科目二要点(已过) - Zhenyu's Blog | 生活值得被记录.&summary=[toc]
-原来二月份要考的科目二，好久没练车，忘得一干二净……别躺了，6月份开始继续练车。"
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/07/04/%E8%93%9D%E6%A1%A5%E6%9D%AF%EF%BC%9A%E7%93%B7%E7%A0%96%E9%93%BA%E6%94%BE/&title=蓝桥杯：瓷砖铺放 - Zhenyu's Blog | 生活值得被记录.&summary=蓝桥杯 算法训练"
           
           >
           
@@ -623,8 +578,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/2020/05/31/%E9%A9%BE%E8%80%83%E7%A7%91%E7%9B%AE%E4%BA%8C%E8%A6%81%E7%82%B9/&title=驾考科目二要点(已过) - Zhenyu's Blog | 生活值得被记录.&summary=[toc]
-原来二月份要考的科目二，好久没练车，忘得一干二净……别躺了，6月份开始继续练车。"
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/2020/07/04/%E8%93%9D%E6%A1%A5%E6%9D%AF%EF%BC%9A%E7%93%B7%E7%A0%96%E9%93%BA%E6%94%BE/&title=蓝桥杯：瓷砖铺放 - Zhenyu's Blog | 生活值得被记录.&summary=蓝桥杯 算法训练"
           
           >
           
@@ -636,8 +590,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/05/31/%E9%A9%BE%E8%80%83%E7%A7%91%E7%9B%AE%E4%BA%8C%E8%A6%81%E7%82%B9/&title=驾考科目二要点(已过) - Zhenyu's Blog | 生活值得被记录.&summary=[toc]
-原来二月份要考的科目二，好久没练车，忘得一干二净……别躺了，6月份开始继续练车。"
+          href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/07/04/%E8%93%9D%E6%A1%A5%E6%9D%AF%EF%BC%9A%E7%93%B7%E7%A0%96%E9%93%BA%E6%94%BE/&title=蓝桥杯：瓷砖铺放 - Zhenyu's Blog | 生活值得被记录.&summary=蓝桥杯 算法训练"
           
           >
           
@@ -661,26 +614,15 @@
         
           <div class="prev-next">
             
-              <a class='prev' href='/2020/06/10/%E7%A7%91%E4%B8%89%E8%A6%81%E7%82%B9/'>
-                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>驾考科目三要点(已过)</p>
-                <p class='content'>​    科目二10号下午过关，考试过程备受煎熬！！
-​    现在认真准备18号的科三考试，暑假争取拿驾照！！！
-18号科目三已过关，29号科四，6月底拿驾照！
-
-
-
-科三灯光口诀 直行跟车有...</p>
-              </a>
             
-            
-              <a class='next' href='/2020/05/31/Github-hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/'>
-                <p class='title'>Github+hexo博客搭建<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-                <p class='content'>hexo静态博客搭建
+              <a class='next' href='/2020/07/04/C++%E5%9F%BA%E7%A1%80%E4%B8%8E%E6%8F%90%E9%AB%98Day3%E5%86%85%E8%81%94%E5%87%BD%E6%95%B0/'>
+                <p class='title'>C++基础与提高：Day3 内联函数<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>近期在学习所谓的”最牛b的c++教程”，做出课程总结。
 
 
-耗费一晚上加一天时间算是搭建好了hexo博客，过程中也遇到很多问题。好在有CSDN的大佬们的文章帮忙。希望能够持续更新博客哦！
-
-</p>
+内联函数C++提供了inline关键字，实现了真正的内嵌。
+做出如下对比：
+12345678910111213141516171819...</p>
               </a>
             
           </div>
@@ -734,7 +676,7 @@
 
   <script>
     window.subData = {
-      title: '驾考科目二要点(已过)',
+      title: '蓝桥杯：瓷砖铺放',
       tools: true
     }
   </script>
@@ -925,7 +867,7 @@
 
 
     <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#六月一日："><span class="toc-number">1.</span> <span class="toc-text">六月一日：</span></a></li></ol>
+      
     </div>
   </section>
 
