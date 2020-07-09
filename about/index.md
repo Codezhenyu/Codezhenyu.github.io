@@ -4,14 +4,13 @@ layout: false
 {% raw %}
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
-    <title>Zhenyu | 一个正在努力的菜鸡.</title>
+    <title>蒋震宇 | 愿抬头总能看见阳光.</title>
     <meta name="description"
-        content="我是一名计算机本科生，喜欢计算机、手机数码的一只菜鸡，空余时间经常学习各种语言编程以及知识，虽然自己会的不多，但是这是我喜欢的爱好吧。沉浸在这个完美的信息世界，能暂时忘掉这充满回忆该死的现实.">
+        content="">
     <meta name="keywords" content="zhenyu,主页,博客">
     <link rel="icon" href="https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/favicon/favicon.ico">
     <style type='text/css'>
@@ -19,6 +18,7 @@ layout: false
     margin: 0;
     padding: 0;
 }
+
 
 body {
     background-image: linear-gradient(to left, rgba(255, 0, 149, 0.2), rgba(0, 247, 255, 0.2)), url(https://cdn.jsdelivr.net/gh/Codezhenyu/CDN/img/cover.jpg);
@@ -56,7 +56,7 @@ body {
 .headPhoto {
     width: 8rem;
     height: 8rem;
-    background: url(https://s1.ax1x.com/2020/06/21/N3028K.jpg) no-repeat;
+    background: url(https://s1.ax1x.com/2020/07/04/NvvxWq.jpg) no-repeat;
     background-size: cover;
     border-radius: 50%;
     position: relative;
@@ -97,12 +97,12 @@ body {
 .meBox-title p {
     font-size: 1.2rem;
     border-right: .1em solid;
-    width: 12ch;
+    width: 13ch;
     white-space: nowrap;
     overflow: hidden;
     animation: typing 2s steps(20, end), blink-caret .3s step-end infinite alternate;
     margin: -30px 0 0 90px;
-    transition: all 0.3s;
+    transition: all 0.4s;
 }
 
 .meBox:hover .meBox-title p {
@@ -120,7 +120,7 @@ body {
     width: 80%;
     height: 45%;
     overflow: hidden;
-    text-align: center;
+    text-align: left;
     color: rgb(70, 70, 70);
     animation-name: meBox-text;
     animation-duration: 2s;
@@ -294,7 +294,7 @@ body {
     text-align: center;
     position: fixed;
     bottom: 0;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     /* background-color: blue; */
 }
 
@@ -434,23 +434,24 @@ body {
             <div class="headPhoto"></div>
             <!-- 介绍 -->
             <div class="meBox-title">
-                <p>I'm zhenyu.</p>
+                <p>zhenyu Jiang.</p>
                 <div class="fg"></div>
             </div>
             <div class="meBox-text">
-                <p>一只即将大二的计算机本科菜鸡生</p><img src="https://s1.ax1x.com/2020/06/22/N8falj.jpg
-                " alt="菜鸡" style="width: 30px; vertical-align: middle;"></p>
-                <p>爱好手机数码，计算机</p>
-                <p>喜欢瞎折腾计算机各种软硬件</p>
-                <p>最爱<img src="https://s1.ax1x.com/2020/06/22/N8fd6s.png" alt="火锅" style="width: 25px; vertical-align: middle;"></p>
+    		<ul>
+    		<li>- 即将大二的计算机双非本科生</li>
+    		<li>- 爱好计算机、手机数码产品</li>
+    		<li>- 最爱的品牌：苹果和小米</li>
+    		<li>- 喜欢折腾软件开发、修改及破解</li>
+    		<li>- 生活中没有其他具体兴趣爱好</li>
+    		</ul>
             </div>
             <!-- 两个按钮 -->
             <div class="meBox-Button">
                 <a href="https://www.zhenyume.xyz/">关于</a>
-                <a href="http://www.zhenyume.xyz/">联系</a>
+                <a href="mailto:321006767@qq.com">联系</a>
             </div>
         </div>
-
         <!-- 伪终端介绍 -->
         <div id="cmdBox">
             <!-- 第一个终端 -->
@@ -469,7 +470,7 @@ body {
                 <div class="cmdText">
                     <span style="color: rgb(0, 190, 0);">root@zhenyu</span>
                     <span style="color: blue;">~</span>
-                    <span style="color: rgb(39, 39, 39);">./天气.sh</span>
+                    <span style="color: rgb(39, 39, 39);">./目前天气.sh</span>
                     <br />
                     <iframe scrolling="no" src="https://tianqiapi.com/api.php?style=tc&skin=pitaya" frameborder="0"
                         width="350" height="24" allowtransparency="true"></iframe>
@@ -477,17 +478,14 @@ body {
                     <span style="color: rgb(0, 190, 0);">root@zhenyu</span>
                     <span style="color: blue;">~</span>
                     <span style="color: rgb(39, 39, 39);">cat /me.txt</span>
-                    <p>爱好计算机，会去自学一些自己感兴趣的东西</p>
-                    <p>略懂H5，C开发,python爬虫；爱好折腾并去解决过程中的问题</p>
-                    <p>同时我也很喜欢玩硬件，研究智能手机产品是我的最爱</p>
-                    <p>计算机这条路我才刚刚迈开了我的第一步</p>
-                    <p>路上的坎一定会非常多，</p>
-                    <p>但在我眼里</p>
-                    <p>没有什么问题是尝试不能解决的，如果有那就多尝试几次甚至上百次</p>
-                    <p>不是每一次努力都有收获，但是每一次收获都要努力</p>
+                    <p>- 在学计算机，会去自学一些自己感兴趣的东西</p>
+                    <p>- 熟练Html/CSS/Javascript/、及C/C++开发、python爬虫</p>
+                    <p style="color: blue;">- 我常常自问：</p>
+                    <p style="color: blue;">- “不自律的人生是一种怎么样的体验？”</p>
+                    <p style="color: blue;">* “被命运反复羞辱,却毫无还手之力。”</p>
                     <span style="color: rgb(0, 190, 0);">root@zhenyu</span>
                     <span style="color: blue;">~</span>
-                    <span style="color: rgb(39, 39, 39);">sudo rm -rf /上一秒的自己/*</span>
+                    <span style="color: rgb(39, 39, 39);">sudo rm -rf /一蹶不振的自己/*</span>
                 </div>
             </div>
             <!-- 第二个终端 -->
@@ -509,11 +507,11 @@ body {
                     <span style="color: rgb(39, 39, 39);">./links.sh</span>
                     <p>我的站点：</p>
                     <ul class="ul">
-                        <li><a href="https://zhenyume.xyz">Blog</a></li>
-                        <li><a href="http://www.chiangzy.xyz/">Navigation</a></li>
+                        <li><a href="https://zhenyume.xyz">Blog博客</a></li>
+                        <li><a href="http://www.chiangzy.xyz/">Navigation导航</a></li>
                     </ul>
                     <span style="color: rgb(0, 190, 0);">root@zhenyu</span>
-                    <span style="color: blue;">~祝你”岁岁常欢愉, 万事皆胜意。”</span>
+                    <span style="color: blue;">~ 愿你年少足风流，一万星辰掬在手，三千清诗唱不休。</span>
                 </div>
             </div>
         </div>
@@ -521,8 +519,7 @@ body {
     
     <!-- 页脚 -->
     <div id="footer">
-        <p>© 2020 zhenyu | <a href="">萌ICP备20210520</a></p>
-        <p>THEME MADE BY <a href="http://www.zhenyume.xyz/">Zhenyu</a></p>
+        <p>© 2020 | <a href="http://www.zhenyume.xyz/">Copyright © 2020-2021 Zhenyu</a></p>
     </div>
 </body>
 
