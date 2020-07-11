@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>蓝桥杯：求先序排列</title>
+      <link href="/2020/07/11/%E8%93%9D%E6%A1%A5%E6%9D%AF%EF%BC%9A%E6%B1%82%E5%85%88%E5%BA%8F%E6%8E%92%E5%88%97/"/>
+      <url>/2020/07/11/%E8%93%9D%E6%A1%A5%E6%9D%AF%EF%BC%9A%E6%B1%82%E5%85%88%E5%BA%8F%E6%8E%92%E5%88%97/</url>
+      
+        <content type="html"><![CDATA[<h1 id="求先序排列（二叉树递归）："><a href="#求先序排列（二叉树递归）：" class="headerlink" title="求先序排列（二叉树递归）："></a>求先序排列（二叉树递归）：</h1><a id="more"></a><h2 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h2><p><strong>描述</strong><br>给出一棵二叉树的中序与后序排列。求出它的先序排列。（约定树结点用不同的大写字母表示，长度&lt;=8）。</p><p><strong>输入格式</strong></p><p>两行，每行一个字符串，分别表示中序和后序排列</p><p><strong>输出格式</strong></p><p>一个字符串，表示所求先序排列</p><p><strong>样例输入</strong><br>　　BADC<br>　　BDCA</p><p><strong>样例输出</strong></p><p>ABCD</p><h2 id="解题："><a href="#解题：" class="headerlink" title="解题："></a>解题：</h2><p>中序排列（左-中-右），后序排列（左-右-中），前序排列（中-左-右）</p><p>★后序遍历的特地是<strong>根节点总是最后被访问到。</strong></p><p>★中序遍历特点是<strong>根节点的左右两侧恰好是它的左右子树。</strong></p><img src="https://s1.ax1x.com/2020/07/11/U1phWV.png" alt="U1phWV.png" style="zoom:67%;" /><p>首先这棵树的根是A（后序排列的最后一个），输出A；</p><p>然后在中序排列中找到A的位置，发现它左右各有三个点，分别是它的左右子树；</p><p>把中序排列左边三个点和后序排列的前三个点作为左子树去dfs，因为先序排列是中-左-右，所以先走左边；</p><div class="note green">            <p>[L]传入的中序是DEB，后序是EDB - 输出B，DE是左子树，同样操作；</p><p>[L]传入的中序是DE，后序是ED - 输出D，E是右子树，同样操作；</p><p>[R]传入的中序是E，后序是E - 输出E；</p><p>[R]传入的中序是FCG，后序是FGC - 输出C，F是左子树，同样操作，G是右子树，同样操作；</p><p>[L] 传入的中序是F，后序是F - 输出F；</p><p>[R] 传入的中序是G，后序是G - 输出G；</p>          </div><p><strong>注意点：</strong>然后接下来我们就可以很简单地通过DFS来完成这道题了，因为求的是先序遍历，所以每次直接输出后序排列的最后一个点即可。没有必要去保存它。</p><p>在程序中我没有判断它有没有子树而是直接dfs了下去（为图方便）。因此，在dfs函数的开始要判断传入的字符串是否大于0。</p><h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*2020年7月11日 20:50:59*/</span></span><br><span class="line"><span class="comment">/*试题 算法训练 求先序排列*/</span> </span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">char</span> mid[<span class="number">10</span>],aft[<span class="number">10</span>];</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> ml,<span class="keyword">int</span> mr,<span class="keyword">int</span> al,<span class="keyword">int</span> ar)</span></span>&#123;</span><br><span class="line"><span class="keyword">int</span> i,j,k;</span><br><span class="line"><span class="keyword">if</span>(ml&gt;mr || al&gt;ar)</span><br><span class="line"><span class="keyword">return</span>;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%c"</span>,aft[ar]);</span><br><span class="line"><span class="keyword">for</span>(i=ml;i&lt;=mr;i++)</span><br><span class="line"><span class="keyword">if</span>(mid[i]==aft[ar])</span><br><span class="line"><span class="keyword">break</span>;</span><br><span class="line">dfs(ml,i<span class="number">-1</span>,al,al+i-ml<span class="number">-1</span>); <span class="comment">//构造递归左子树</span></span><br><span class="line">dfs(i+<span class="number">1</span>,mr,ar-mr+i,ar<span class="number">-1</span>);  <span class="comment">//构造递归右子树 </span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"><span class="keyword">int</span>  i,j,len;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">"%s"</span>,mid);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%s"</span>,aft);</span><br><span class="line">len=<span class="built_in">strlen</span>(mid)<span class="number">-1</span>;</span><br><span class="line">dfs(<span class="number">0</span>,len,<span class="number">0</span>,len);</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法入门 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 递归 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Vue.js学习Day1</title>
       <link href="/2020/07/11/%E5%89%8D%E7%AB%AFVue%E5%AD%A6%E4%B9%A0day01/"/>
       <url>/2020/07/11/%E5%89%8D%E7%AB%AFVue%E5%AD%A6%E4%B9%A0day01/</url>
