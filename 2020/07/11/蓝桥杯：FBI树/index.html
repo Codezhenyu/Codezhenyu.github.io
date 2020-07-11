@@ -5,8 +5,6 @@
     <!-- SEO相关 -->
     
             
-                                <meta name="robots" content="noindex,follow">
-                                
                                             
                                                 <!-- 渲染优化 -->
                                                 <meta name="renderer" content="webkit">
@@ -20,12 +18,16 @@
                                                 
                                                     <title>
                                                         
-                                                            Archive: 2020/7 -
+                                                            蓝桥杯：FBI树 -
                                                                 
                                                                     Zhenyu&#39;s Blog | 合当奋意向人生.
                                                     </title>
                                                     
+                                                        <meta name="keywords" content="递归">
+                                                        
                                                             
+                                                                <meta name="description" content="FBI树（二叉树递归）">
+                                                                
 
                                                                     <!-- feed -->
                                                                     
@@ -338,36 +340,11 @@
       
 
 <div class='l_main'>
-	
-		
-  <section class="post-list ">
-    
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
   
+
+  
+    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+      
 
 
   <section class='meta'>
@@ -377,11 +354,11 @@
       <div class="meta" id="header-meta">
         
           
-  <h2 class="title">
+  <h1 class="title">
     <a href="/2020/07/11/%E8%93%9D%E6%A1%A5%E6%9D%AF%EF%BC%9AFBI%E6%A0%91/">
       蓝桥杯：FBI树
     </a>
-  </h2>
+  </h1>
 
 
         
@@ -455,827 +432,261 @@
   </section>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="FBI树（二叉树递归）"><a href="#FBI树（二叉树递归）" class="headerlink" title="FBI树（二叉树递归）"></a>FBI树（二叉树递归）</h1>
-      
-    </div>
-    
-      
-        <div class="button readmore">
-          <a href="/2020/07/11/%E8%93%9D%E6%A1%A5%E6%9D%AF%EF%BC%9AFBI%E6%A0%91/">
-            阅读全文 <i class="far fa-hand-point-right"></i>
-          </a>
-        </div>
-      
-    
-  </section>
-</article>
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <h1 id="FBI树（二叉树递归）"><a href="#FBI树（二叉树递归）" class="headerlink" title="FBI树（二叉树递归）"></a>FBI树（二叉树递归）</h1><a id="more"></a>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
+<h2 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h2><p><strong>问题描述</strong></p>
+<p>　　我们可以把由“0”和“1”组成的字符串分为三类：全“0”串称为B串，全“1”串称为I串，既含“0”又含“1”的串则称为F串。<br>　　FBI树是一种二叉树，它的结点类型也包括F结点，B结点和I结点三种。由一个长度为2N的“01”串S可以构造出一棵FBI树T，递归的构造方法如下：<br>　　1)T的根结点为R，其类型与串S的类型相同；<br>　　2)若串S的长度大于1，将串S从中间分开，分为等长的左右子串S1和S2；由左子串S1构造R的左子树T1，由右子串S2构造R的右子树T2。<br>　　现在给定一个长度为2N的“01”串，请用上述构造方法构造出一棵FBI树，并输出它的后序遍历序列。</p>
+<p><strong>输入格式</strong></p>
+<p>　　第一行是一个整数N（0 &lt;= N &lt;= 10），第二行是一个长度为2N的“01”串。</p>
+<p><strong>输出格式</strong></p>
+<p>　　包括一行，这一行只包含一个字符串，即FBI树的后序遍历序列。</p>
+<p><strong>样例输入</strong></p>
+<p>3<br>10001011</p>
+<p><strong>样例输出</strong></p>
+<p>IBFBBBFIBFIIIFF</p>
+<h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><p> 首先将输入的字符串递归转换为二叉树，对于各个部分的左子树、右子树，通过判定其所包含孩子的’0’或’1’的个数来判断类型：’I’ ‘B’ ‘F’。 </p>
+<img src="https://s1.ax1x.com/2020/07/11/U1eWxs.png" alt="U1eWxs.png" style="zoom: 50%;" />
+
+
+
+<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*2020年7月11日 21:29:43*/</span></span><br><span class="line"><span class="comment">/*试题 算法训练 FBI树*/</span> </span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt; </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">string</span> s;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Print</span><span class="params">(<span class="keyword">int</span> left,<span class="keyword">int</span> right)</span></span>&#123;</span><br><span class="line">	<span class="comment">//type0表示所遍历的字符串部分'0'的个数 </span></span><br><span class="line">	<span class="comment">//type1表示所遍历的字符串部分'1'的个数  </span></span><br><span class="line">	<span class="keyword">int</span> type0=<span class="number">0</span>,type1=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=left;i&lt;=right;i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(s[i]==<span class="string">'0'</span>) type0++;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(s[i]==<span class="string">'1'</span>) type1++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//若type0为0,说明为全1字符串，输出'I' </span></span><br><span class="line">	<span class="keyword">if</span>(type0==<span class="number">0</span>&amp;&amp;type1!=<span class="number">0</span>) <span class="built_in">cout</span>&lt;&lt;<span class="string">'I'</span>;</span><br><span class="line">	<span class="comment">//若type1为0,说明为全0字符串，输出'B' </span></span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(type0!=<span class="number">0</span>&amp;&amp;type1==<span class="number">0</span>) <span class="built_in">cout</span>&lt;&lt;<span class="string">'B'</span>;</span><br><span class="line">	<span class="keyword">else</span> <span class="built_in">cout</span>&lt;&lt;<span class="string">'F'</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Struct</span><span class="params">(<span class="keyword">int</span> left,<span class="keyword">int</span> right)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(left!=right)&#123;</span><br><span class="line">		<span class="comment">//递归二叉树 </span></span><br><span class="line">		Struct(left,(left+right)/<span class="number">2</span>);</span><br><span class="line">		Struct((left+right)/<span class="number">2</span>+<span class="number">1</span>,right);</span><br><span class="line">	&#125;</span><br><span class="line">	Print(left,right);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;s;</span><br><span class="line">	Struct(<span class="number">0</span>,<span class="built_in">pow</span>(<span class="number">2</span>,n)<span class="number">-1</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+          
+            <div class='article_footer'>
+              
+                
+  
+    
+    
+
+
+
   
 
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/07/11/%E8%93%9D%E6%A1%A5%E6%9D%AF%EF%BC%9A%E6%B1%82%E5%85%88%E5%BA%8F%E6%8E%92%E5%88%97/">
-      蓝桥杯：求先序排列
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a href="https://zhenyume.xyz" target="_blank" rel="nofollow noopener">
-    <img src="https://s1.ax1x.com/2020/07/04/NvvxWq.jpg">
-    <p>zhenyu</p>
-  </a>
-</div>
-
-            
-          
-            
-              
   
-  <div class='new-meta-item category'>
-    <a href='/categories/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>算法入门</p>
-    </a>
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
+        
+          
+            <p>愿你三冬暖，愿你春不寒，愿你天黑有灯下雨有伞，愿你路上有良人相伴。</p>
+
+          
+        
+          
+            <p>本博客内容涉及有关参考资料、教程、链接如有侵权请联系我删除！永久链接：<a href="http://www.zhenyume.xyz" target="_blank" rel="noopener">www.zhenyume.xyz</a></p>
+
+          
+        
+      </blockquote>
+    
   </div>
+</section>
+
+  
+
+  
+    
+    
+
+<section class="widget qrcode  desktop mobile">
+  
+
+  <div class='content article-entry'>
+    
+      
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/codezhenyu/CDN/img/weixin.jpg'
+        
+          height='64px'
+        ></div>
+      
+    
+      
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/Codezhenyu/CDN/img/qq.jpg'
+        
+          height='64px'
+        ></div>
+      
+    
+  </div>
+</section>
+
+  
 
 
-            
+              
+            </div>
           
-            
-              <div class="new-meta-item date">
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-07-11T22:08:27+08:00">
   <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Jul 11, 2020</p>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：Jul 11, 2020</p>
   </a>
 </div>
 
-            
-          
-            
-              
-  <div class="new-meta-item wordcount">
-    <a class='notlink'>
-      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>650 words</p>
-    </a>
-  </div>
-  <div class="new-meta-item readtime">
-    <a class='notlink'>
-      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>2 min</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
         
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="求先序排列（二叉树递归）："><a href="#求先序排列（二叉树递归）：" class="headerlink" title="求先序排列（二叉树递归）："></a>求先序排列（二叉树递归）：</h1>
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E9%80%92%E5%BD%92/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>递归</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/07/11/%E8%93%9D%E6%A1%A5%E6%9D%AF%EF%BC%9AFBI%E6%A0%91/&title=蓝桥杯：FBI树 - Zhenyu's Blog | 合当奋意向人生.&summary=FBI树（二叉树递归）"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/2020/07/11/%E8%93%9D%E6%A1%A5%E6%9D%AF%EF%BC%9AFBI%E6%A0%91/&title=蓝桥杯：FBI树 - Zhenyu's Blog | 合当奋意向人生.&summary=FBI树（二叉树递归）"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/07/11/%E8%93%9D%E6%A1%A5%E6%9D%AF%EF%BC%9AFBI%E6%A0%91/&title=蓝桥杯：FBI树 - Zhenyu's Blog | 合当奋意向人生.&summary=FBI树（二叉树递归）"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
       
     </div>
-    
-      
-        <div class="button readmore">
-          <a href="/2020/07/11/%E8%93%9D%E6%A1%A5%E6%9D%AF%EF%BC%9A%E6%B1%82%E5%85%88%E5%BA%8F%E6%8E%92%E5%88%97/">
-            阅读全文 <i class="far fa-hand-point-right"></i>
-          </a>
-        </div>
-      
-    
   </section>
-</article>
 
+
+        
+        
+          <div class="prev-next">
+            
+            
+              <a class='next' href='/2020/07/11/%E8%93%9D%E6%A1%A5%E6%9D%AF%EF%BC%9A%E6%B1%82%E5%85%88%E5%BA%8F%E6%8E%92%E5%88%97/'>
+                <p class='title'>蓝桥杯：求先序排列<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>求先序排列（二叉树递归）：
+
+问题：描述给出一棵二叉树的中序与后序排列。求出它的先序排列。（约定树结点用不同的大写字母表示，长度&lt;=8）。
+输入格式
+两行，每行一个字符串，分别表示中序和后...</p>
+              </a>
+            
           </div>
         
-      
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+    
+        <article class="post white-box reveal comments shadow">
+            <section class="article typo">
+                <p ct>
+                    <i class='fas fa-comments'></i> 欢迎评论
+                </p>
+                
+                        
+                                
+                                        
+                                                
+                                                        
+                                                            <section id="comments">
+                                                                <div id="valine_container" class="valine_thread">
+                                                                    <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+                                                                </div>
+                                                                <!-- valine 添加一言 -->
+                                                                <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+                                                                <script type="text/javascript">
+                                                                    jinrishici.load(function(result) {
+                                                                        var jrsc_plac = result.data.content + "\n「" + result.data.origin.title + "」" + result.data.origin.dynasty + " · " + result.data.origin.author
+                                                                        document.getElementById("veditor").setAttribute("placeholder", jrsc_plac);
+                                                                    });
+                                                                </script>
+                                                            </section>
+                                                            
+                                                                
+            </section>
+        </article>
         
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
   
 
 
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/07/11/%E5%89%8D%E7%AB%AFVue%E5%AD%A6%E4%B9%A0day01/">
-      Vue.js学习Day1
-    </a>
-  </h2>
 
 
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a href="https://zhenyume.xyz" target="_blank" rel="nofollow noopener">
-    <img src="https://s1.ax1x.com/2020/07/04/NvvxWq.jpg">
-    <p>zhenyu</p>
-  </a>
-</div>
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
 
-            
-          
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>前端基础</p>
-    </a>
-  </div>
 
 
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Jul 11, 2020</p>
-  </a>
-</div>
+  <script>
+    window.subData = {
+      title: '蓝桥杯：FBI树',
+      tools: true
+    }
+  </script>
 
-            
-          
-            
-              
-  <div class="new-meta-item wordcount">
-    <a class='notlink'>
-      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>4.5k words</p>
-    </a>
-  </div>
-  <div class="new-meta-item readtime">
-    <a class='notlink'>
-      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>21 min</p>
-    </a>
-  </div>
 
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Day01-2020-7-9"><a href="#Day01-2020-7-9" class="headerlink" title="Day01 2020/7/9"></a>Day01 2020/7/9</h1><p>在家实在是无法安安静静地复习期末，先好好学学前端的Vue框架吧。</p>
-      
-    </div>
-    
-      
-        <div class="button readmore">
-          <a href="/2020/07/11/%E5%89%8D%E7%AB%AFVue%E5%AD%A6%E4%B9%A0day01/">
-            阅读全文 <i class="far fa-hand-point-right"></i>
-          </a>
-        </div>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/07/05/%E8%93%9D%E6%A1%A5%E6%9D%AF%EF%BC%9A%E5%8D%95%E8%AF%8D%E6%8E%A5%E9%BE%99/">
-      蓝桥杯：单词接龙
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a href="https://zhenyume.xyz" target="_blank" rel="nofollow noopener">
-    <img src="https://s1.ax1x.com/2020/07/04/NvvxWq.jpg">
-    <p>zhenyu</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>算法入门</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Jul 5, 2020</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  <div class="new-meta-item wordcount">
-    <a class='notlink'>
-      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>1.1k words</p>
-    </a>
-  </div>
-  <div class="new-meta-item readtime">
-    <a class='notlink'>
-      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>4 min</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="蓝桥杯-算法训练-单词接龙"><a href="#蓝桥杯-算法训练-单词接龙" class="headerlink" title="蓝桥杯 算法训练 单词接龙"></a>蓝桥杯 算法训练 单词接龙</h1><p>参考博客：<a href="https://www.cnblogs.com/zbx2000/p/12715400.html" target="_blank" rel="noopener">https://www.cnblogs.com/zbx2000/p/12715400.html</a></p>
-      
-    </div>
-    
-      
-        <div class="button readmore">
-          <a href="/2020/07/05/%E8%93%9D%E6%A1%A5%E6%9D%AF%EF%BC%9A%E5%8D%95%E8%AF%8D%E6%8E%A5%E9%BE%99/">
-            阅读全文 <i class="far fa-hand-point-right"></i>
-          </a>
-        </div>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/07/04/%E8%93%9D%E6%A1%A5%E6%9D%AF%EF%BC%9A%E7%93%B7%E7%A0%96%E9%93%BA%E6%94%BE/">
-      蓝桥杯：瓷砖铺放
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a href="https://zhenyume.xyz" target="_blank" rel="nofollow noopener">
-    <img src="https://s1.ax1x.com/2020/07/04/NvvxWq.jpg">
-    <p>zhenyu</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>算法入门</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Jul 4, 2020</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  <div class="new-meta-item wordcount">
-    <a class='notlink'>
-      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>249 words</p>
-    </a>
-  </div>
-  <div class="new-meta-item readtime">
-    <a class='notlink'>
-      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>1 min</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="蓝桥杯-算法训练"><a href="#蓝桥杯-算法训练" class="headerlink" title="蓝桥杯 算法训练"></a>蓝桥杯 算法训练</h1>
-      
-    </div>
-    
-      
-        <div class="button readmore">
-          <a href="/2020/07/04/%E8%93%9D%E6%A1%A5%E6%9D%AF%EF%BC%9A%E7%93%B7%E7%A0%96%E9%93%BA%E6%94%BE/">
-            阅读全文 <i class="far fa-hand-point-right"></i>
-          </a>
-        </div>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/07/04/C++%E5%9F%BA%E7%A1%80%E4%B8%8E%E6%8F%90%E9%AB%98Day3%E5%86%85%E8%81%94%E5%87%BD%E6%95%B0/">
-      C++基础与提高：Day3 内联函数
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a href="https://zhenyume.xyz" target="_blank" rel="nofollow noopener">
-    <img src="https://s1.ax1x.com/2020/07/04/NvvxWq.jpg">
-    <p>zhenyu</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/C-%E5%9F%BA%E7%A1%80/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>C++基础</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Jul 4, 2020</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  <div class="new-meta-item wordcount">
-    <a class='notlink'>
-      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>1k words</p>
-    </a>
-  </div>
-  <div class="new-meta-item readtime">
-    <a class='notlink'>
-      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>4 min</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>近期在学习所谓的”最牛b的c++教程”，做出课程总结。</p>
-      
-    </div>
-    
-      
-        <div class="button readmore">
-          <a href="/2020/07/04/C++%E5%9F%BA%E7%A1%80%E4%B8%8E%E6%8F%90%E9%AB%98Day3%E5%86%85%E8%81%94%E5%87%BD%E6%95%B0/">
-            阅读全文 <i class="far fa-hand-point-right"></i>
-          </a>
-        </div>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/07/01/%E8%93%9D%E6%A1%A5%E6%9D%AF%EF%BC%9A01%E8%83%8C%E5%8C%85%EF%BC%88dp%EF%BC%89/">
-      蓝桥杯：01背包（dp）
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a href="https://zhenyume.xyz" target="_blank" rel="nofollow noopener">
-    <img src="https://s1.ax1x.com/2020/07/04/NvvxWq.jpg">
-    <p>zhenyu</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>算法入门</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Jul 1, 2020</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  <div class="new-meta-item wordcount">
-    <a class='notlink'>
-      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>2.3k words</p>
-    </a>
-  </div>
-  <div class="new-meta-item readtime">
-    <a class='notlink'>
-      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>10 min</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="蓝桥杯：01背包问题（动态规划）"><a href="#蓝桥杯：01背包问题（动态规划）" class="headerlink" title="蓝桥杯：01背包问题（动态规划）"></a>蓝桥杯：01背包问题（动态规划）</h1><p><strong>问题描述</strong></p>
-<p>　　给定N个物品,每个物品有一个重量W和一个价值V.你有一个能装M重量的背包.问怎么装使得所装价值最大.每个物品只有一个.</p>
-      
-    </div>
-    
-      
-        <div class="button readmore">
-          <a href="/2020/07/01/%E8%93%9D%E6%A1%A5%E6%9D%AF%EF%BC%9A01%E8%83%8C%E5%8C%85%EF%BC%88dp%EF%BC%89/">
-            阅读全文 <i class="far fa-hand-point-right"></i>
-          </a>
-        </div>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/07/01/dp%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E6%9C%80%E5%A4%A7%E5%AD%90%E6%AE%B5%E5%92%8C/">
-      dp算法学习：最大子段和及LIS,LCS
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a href="https://zhenyume.xyz" target="_blank" rel="nofollow noopener">
-    <img src="https://s1.ax1x.com/2020/07/04/NvvxWq.jpg">
-    <p>zhenyu</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>算法入门</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Jul 1, 2020</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  <div class="new-meta-item wordcount">
-    <a class='notlink'>
-      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>1.4k words</p>
-    </a>
-  </div>
-  <div class="new-meta-item readtime">
-    <a class='notlink'>
-      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>6 min</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="最大子段和"><a href="#最大子段和" class="headerlink" title="最大子段和"></a>最大子段和</h1><p>最大子段的概念：连续的一段子序列称为一个子段，子段中所有数的和称为子段和。</p>
-<p><strong>例题</strong>： </p>
-<p>下列数列最大子段和为多少</p>
-<p>-2，11，-4，13，-5，-2</p>
-      
-    </div>
-    
-      
-        <div class="button readmore">
-          <a href="/2020/07/01/dp%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%EF%BC%9A%E6%9C%80%E5%A4%A7%E5%AD%90%E6%AE%B5%E5%92%8C/">
-            阅读全文 <i class="far fa-hand-point-right"></i>
-          </a>
-        </div>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
-    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-    
-    
-
-  
-
-
-	
 </div>
 <aside class='l_side'>
   
@@ -1439,6 +850,28 @@
 
   
 
+  
+    
+    
+
+
+  <section class="widget toc-wrapper shadow blur desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题："><span class="toc-number">1.</span> <span class="toc-text">问题：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#思路："><span class="toc-number">2.</span> <span class="toc-text">思路：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码："><span class="toc-number">3.</span> <span class="toc-text">代码：</span></a></li></ol>
+    </div>
+  </section>
+
+
+  
+
 
 </aside>
 
@@ -1529,14 +962,6 @@
   </footer>
 
 <script>setLoadingBarProgress(80);</script>
-
-
-
-
-	<!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-	
-
-	
 
 
       <script>setLoadingBarProgress(60);</script>
@@ -1651,6 +1076,60 @@
 
 
 
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js"></script>
+
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var meta = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick','mail','link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function(item){
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+  var valine = new Valine();
+  function emoji(path, idx, ext) {
+      return path + "/" + path + "-" + idx + "." + ext;
+  }
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+  valine.init({
+    el: '#valine_container',
+    meta: meta,
+    
+    appId: "6jFBwPDnkXITBaVJaEsnebVA-gzGzoHsz",
+    appKey: "45ozfavdxT288RAc1CJHI2jg",
+    placeholder: "阅读上面的材料，根据要求写一篇不少于800字的文章 (本题60分)",
+    pageSize:'10',
+    avatar:'mp',
+    lang:'zh-cn',
+    visitor: 'true',
+    highlight: 'true',
+    mathJax: 'false',
+    enableQQ: 'true',
+    requiredFields: requiredFields,
+    emojiCDN: 'https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/emoji/valine/',
+    emojiMaps: emojiMaps
+  })
+  </script>
 
 
 
