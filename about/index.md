@@ -480,12 +480,12 @@ body {
                     <span style="color: rgb(39, 39, 39);">cat /me.txt</span>
                     <p>- 在学计算机，会去自学一些自己感兴趣的东西</p>
                     <p>- 熟练Html/CSS/Javascript/、及C/C++开发、python爬虫</p>
-                    <p style="color: blue;">- 我常常自问：</p>
+                    <p style="color: red;">- 人最大的动力,除了兴趣,就是耻辱。 </p>
                     <p style="color: blue;">- “不自律的人生是一种怎么样的体验？”</p>
                     <p style="color: blue;">* “被命运反复羞辱,却毫无还手之力。”</p>
                     <span style="color: rgb(0, 190, 0);">root@zhenyu</span>
                     <span style="color: blue;">~</span>
-                    <span style="color: rgb(39, 39, 39);">sudo rm -rf /一蹶不振的自己/*</span>
+                    <span style="color: rgb(39, 39, 39);">sudo rm -rf /不够努力的自己/*</span>
                 </div>
             </div>
             <!-- 第二个终端 -->
