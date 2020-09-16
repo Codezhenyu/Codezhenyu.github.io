@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>C++校内课程：引用的概念</title>
+      <link href="/2020/09/16/C++%E4%B8%8A%E8%AF%BE%E5%86%85%E5%AE%B9/"/>
+      <url>/2020/09/16/C++%E4%B8%8A%E8%AF%BE%E5%86%85%E5%AE%B9/</url>
+      
+        <content type="html"><![CDATA[<p>c++作为入门的编程语言，需要透彻理解每一个概念知识点。</p><a id="more"></a><h1 id="C-课程："><a href="#C-课程：" class="headerlink" title="C++课程："></a>C++课程：</h1><h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><h3 id="引用的概念"><a href="#引用的概念" class="headerlink" title="引用的概念"></a>引用的概念</h3><p> 类型名 &amp; 引用名 = 某变量名;</p><p>int n =4;</p><p>int &amp;r= n; //r引用了n，r的类型是<strong>int &amp;</strong></p><p><strong>注意</strong>：<em>某个变量的引用，等价于这个变量，相当于该变量的一个别名。</em></p><p><em>初始化后，它就一直引用该变量，不会再引用别的变量了。</em></p><p><em>引用只能引用变量，不能引用常量表达式。</em></p><h3 id="常引用"><a href="#常引用" class="headerlink" title="常引用"></a>常引用</h3><p><strong>常引用</strong>：定义引用时，前面加上const关键字。</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">int</span> n;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> &amp;r = n;</span><br><span class="line">r的类型是 <span class="keyword">const</span> <span class="keyword">int</span> &amp;</span><br></pre></td></tr></table></figure><p><a href="https://imgchr.com/i/wghJUK" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/09/16/wghJUK.md.png" alt="wghJUK.md.png"></a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> C++基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C++ </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>ACwing算法课程学习Day1</title>
       <link href="/2020/08/30/ACwing%E7%AE%97%E6%B3%95%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0Day1/"/>
       <url>/2020/08/30/ACwing%E7%AE%97%E6%B3%95%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0Day1/</url>
