@@ -21,7 +21,7 @@ layout: false
 
 
 body {
-    background-image: linear-gradient(to left, rgba(255, 0, 149, 0.2), rgba(0, 247, 255, 0.2)), url(https://cdn.jsdelivr.net/gh/Codezhenyu/CDN/img/cover.jpg);
+    background-image: linear-gradient(to left, rgba(255, 0, 149, 0.2), rgba(0, 247, 255, 0.2)), url(https://z3.ax1x.com/2021/03/29/cCnbCD.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -56,7 +56,7 @@ body {
 .headPhoto {
     width: 8rem;
     height: 8rem;
-    background: url(https://z3.ax1x.com/2021/03/29/cCnbCD.jpg) no-repeat;
+    background: url(https://s1.ax1x.com/2020/07/04/NvvxWq.jpg) no-repeat;
     background-size: cover;
     border-radius: 50%;
     position: relative;
